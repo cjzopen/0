@@ -1,0 +1,37 @@
+.bg-gray.bg-lazyloaded{
+  background-size: auto;
+  background-repeat: repeat;
+}
+.swiper-pagination{
+  position: static
+}
+.swiper-pagination>li{
+  position: relative;
+}
+li.focus::after{
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 3rem 3rem 3rem;
+  border-color: transparent transparent #f7f7f7 transparent;
+  top: 100%;
+  left: calc(50% - 3rem);
+  position: absolute;
+}
+.swiper-container{
+  background-color: #f7f7f7;
+}
+.first-orange td:nth-child(2),.first-orange th:nth-child(2){
+  background-color: rgba(249, 165, 45,.1);
+  color: #F9A52D;
+}
+h1,h2{
+  padding-top: 3rem;
+}
+section{
+  padding: 0;
+}
+mark{
+  background-color: rgba(249, 165, 45,.3);
+}

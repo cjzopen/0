@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /404*
+Disallow: /en-m/
+Disallow: /m/
+Disallow: /cn/
+Disallow: /th/
+Disallow: /img/banner/banner-temp.jpg
+Disallow: /img/temp.jpg
+Disallow: /amp/
+Sitemap: https://www.ares.com.tw/sitemap.xml
+Sitemap: https://www.ares.com.tw/news.xml

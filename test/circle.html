@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<style>
+*{
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+:root{
+  --gauge-circle-size:200px;
+  --color-average:#e47f20;
+}
+.lh-gauge__svg-wrapper {
+    position: relative;
+    height: var(--gauge-circle-size);
+}
+.lh-gauge {
+    stroke-linecap: round;
+    width: var(--gauge-circle-size);
+    height: var(--gauge-circle-size);
+    transform-origin: center center;
+}
+.lh-gauge__wrapper--average {
+    color: var(--color-average);
+    fill: none;
+    stroke: var(--color-average);
+}
+.lh-gauge-base {
+    opacity: 0.1;
+    /* stroke: var(--circle-background); */
+}
+.lh-gauge-arc {
+    fill: none;
+    /* stroke: var(--circle-color); */
+    transform-origin: 50% 50%;
+    animation: load-gauge 1s ease forwards;
+    animation-delay: 250ms;
+}
+@keyframes load-gauge{
+  0% {
+    stroke-dasharray: 0 352;
+  }
+}
+</style>
+<p>圓要 rotate -87.9537deg，stroke-dasharray 全長為 351.858</p>
+<p>以分母為100、數值60為例，stroke-dasharray 的值為 351.858 * 60/100 - 4 = 207.1148，且不可小於0</p>
+<div id="gradient-symbol" style="height: 0; width: 0; position: absolute; visibility: hidden">
+  <svg>
+    <defs>
+      <linearGradient id="circle-gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#00bc9b" />
+        <stop offset="100%" stop-color="#5eaefd" />
+      </linearGradient>
+      <linearGradient id="circle-gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#123456" />
+        <stop offset="100%" stop-color="#7890ab" />
+      </linearGradient>
+      <linearGradient id="circle-gradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#d929c1" />
+        <stop offset="100%" stop-color="#fe5782" />
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+
+<div class="lh-gauge__svg-wrapper lh-gauge__wrapper--average">
+  <svg viewBox="0 0 120 120" class="lh-gauge">
+    <g>
+      <circle class="lh-gauge-base" r="55" cx="60" cy="60" stroke-width="10"></circle>
+      <circle class="lh-gauge-arc" r="55" cx="60" cy="60" stroke-width="10" stroke="url(#circle-gradient1)" style="transform: rotate(-87.9537deg); stroke-dasharray: 111, 351.858;"></circle>
+    </g>
+    <g style="transform: scale(0.8,0.8);transform-origin: center center;">
+      <!-- <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="10"></circle> -->
+      <circle class="lh-gauge-arc" r="53.25" cx="60" cy="60" stroke-width="12.5" stroke="url(#circle-gradient2)" style="transform: rotate(-87.9537deg); stroke-dasharray: 231.745, 351.858;"></circle>
+    </g>
+    <g style="transform: scale(0.6,0.6);transform-origin: center center;">
+      <!-- <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="10"></circle> -->
+      <circle class="lh-gauge-arc" r="52" cx="60" cy="60" stroke-width="16" stroke="url(#circle-gradient3)" style="transform: rotate(-87.9537deg); stroke-dasharray: 300.745, 351.858;"></circle>
+    </g>
+  </svg>
+</div>
+<div class="lh-gauge__svg-wrapper lh-gauge__wrapper--average" style="width:160px">
+  <svg viewBox="0 0 120 120" class="lh-gauge">
+    <circle class="lh-gauge-base" r="56" cx="60" cy="60" stroke-width="8"></circle>
+    <circle class="lh-gauge-arc" r="56" cx="60" cy="60" stroke-width="8" stroke="url(#circle-gradient1)" style="transform: rotate(-87.9537deg); stroke-dasharray: 220, 351.858;"></circle>
+  </svg>
+</div>
+
+<div style="width:300px;height:4px;background:orchid;display: inline-block;"></div>
+</body>
+</html>

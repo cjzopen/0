@@ -1,0 +1,64 @@
+:root{
+  --gauge-circle-size:132px;
+  --gauge-circle-color:#2758a9;
+  --gauge-font-color:#44b1c2;
+  --score-container-padding: 8px;
+}
+section .table{
+  font-family: 'Zapf Dingbats','Noto Sans TC';
+}
+.table-bordered th,.table-bordered td{
+  border-width: 3px;
+  border-color: #ebebeb;
+}
+.lh-score__gauge {
+    max-width: 400px;
+    width: auto;
+    margin: 0px auto;
+}
+.lh-gauge__wrapper, .lh-fraction__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: var(--score-container-padding);
+    contain: content;
+    /* will-change: opacity; */
+}
+.lh-gauge__wrapper--nuntio {
+    color: var(--gauge-font-color);
+    fill: var(--gauge-circle-color);
+    stroke: var(--gauge-circle-color);
+}
+.lh-gauge__svg-wrapper {
+    position: relative;
+    height: var(--gauge-circle-size);
+}
+.lh-gauge {
+    stroke-linecap: round;
+    width: var(--gauge-circle-size);
+    height: var(--gauge-circle-size);
+}
+.lh-gauge-base {
+    /* opacity: 0.1; */
+    fill:#eee;
+    stroke:#eee;
+}
+.lh-gauge-arc {
+    fill: none;
+    transform-origin: 50% 50%;
+    animation: load-gauge 1s ease forwards;
+    animation-delay: 250ms;
+}
+.lh-gauge__percentage {
+    width: 100%;
+    height: var(--gauge-circle-size);
+    position: absolute;
+    font-size: calc(var(--gauge-circle-size) * 0.34 + 1.3px);
+    line-height: 0;
+    text-align: center;
+    top: calc(var(--score-container-padding) + var(--gauge-circle-size) / 2);
+}
+@keyframes load-gauge {
+  from { stroke-dasharray: 0 352; }
+}

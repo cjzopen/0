@@ -1,0 +1,98 @@
+:root{
+  --red:#d33;
+  --border-color:#ccc;
+  --section-padding-top:3rem;
+  --easy-protect-move:320px;
+}
+section{
+  --blue:#3669a7;
+}
+.check-list{
+  list-style-image: url('/img/product/comodo/check.svg');
+  list-style-position: inside;
+}
+.circle-check-list li{
+  background-image: url('/img/product/comodo/checkbox.svg');
+  background-size: 20px 20px;
+  background-position: left top+8px;
+  background-repeat: no-repeat;
+  padding-left: 26px;
+  margin: 2px 0 2px;
+}
+.color-blue{
+  color:var(--blue);
+}
+.bg-blue{
+  background-color:var(--blue);
+}
+.color-red{
+  color:var(--red);
+}
+.bg-red{
+  background-color:var(--red);
+}
+.apt-list li+li{
+  border-top:1px solid var(--border-color);
+}
+#case {
+  background-color: #E4F3FF;
+  background-image: url(/img/service/si/triangle.png);
+  background-position: 15% 0;
+  background-repeat: no-repeat;
+}
+.swiper-slide img {
+  width: unset;
+}
+.font-weight-normal{
+  font-weight: 400;
+}
+#attack-type,
+.attack-type,
+#compare-table{
+  text-align: center;
+  & th,
+  & td{
+    vertical-align:middle;
+  }
+}
+#attack-type,
+#compare-table{
+  table-layout:fixed;
+}
+#comodo-function{
+  padding-top: var(--section-padding-top);
+  padding-bottom: 3.75rem;
+  margin-top: 4rem;
+}
+#easy-protect{
+  margin-top: 5rem;
+}
+#compare-table{
+  max-width: 640px;
+  margin:0 auto;
+  & td:not(.no){
+    color:#28A745;
+  }
+  & thead th{
+    border-top:0;
+  }
+  & .no{
+    color:#DD3333;
+  }
+}
+@media (max-width:1201px) {
+  .be-img{
+    display: none;
+  }
+}
+@media (min-width:992px) {
+  #comodo-function{
+    clip-path: ellipse(100% 67% at 50% 67%);
+    padding-top: calc(var(--easy-protect-move) - var(--section-padding-top));
+  }
+  #easy-protect{
+    position: relative;
+    margin-bottom: calc(var(--easy-protect-move) * -1);
+    z-index: 1;
+  }
+}

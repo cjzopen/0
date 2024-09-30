@@ -1,0 +1,67 @@
+$main-color:#194e75;
+$sub-color:#00cfdc;
+$white:#FFF;
+$gray-color:#f2f2f2;
+$blue-color:#2858aa;
+$border-color:#989898;
+$orange-color:#F6921E;
+$black-color:#424242;
+
+
+@mixin transitions($e: "all", $s:".4s", $easing: "") {
+  -webkit-transition: unquote($e) unquote($s) unquote($easing);
+  -moz-transition: unquote($e) unquote($s) unquote($easing);
+  transition: unquote($e) unquote($s) unquote($easing);
+}
+/* 圖像縮放計算方式 */
+@mixin image-rendering{
+  image-rendering:optimizeSpeed;
+  image-rendering:-moz-crisp-edges;
+  image-rendering:-o-crisp-edges;
+  image-rendering:-webkit-optimize-contrast;
+  image-rendering:crisp-edges;
+  -ms-interpolation-mode:bicubic;
+}
+@mixin box-sizing($border-box) {
+  -webkit-box-sizing: $border-box;
+  -moz-box-sizing: $border-box;
+  box-sizing: $border-box;
+}
+@mixin gradient{
+  background: #dcdcdc;
+  background-image: -webkit-linear-gradient(180deg, $white 0%, #f0f0f0 100%);
+  background-image: -o-linear-gradient(180deg, $white 0%, #f0f0f0 100%);
+  background-image: -o-linear-gradient(180deg, $white 0%, #f0f0f0 100%);
+  background-image: linear-gradient(180deg, $white 0%, #f0f0f0 100%);
+  background-repeat: no-repeat;
+}
+@mixin placeholder($color){
+  ::-webkit-input-placeholder {
+    color: $color;
+  }
+  ::-moz-placeholder {
+    color: $color;
+  }
+  :-ms-input-placeholder {
+    color: $color;
+  }
+  :-moz-placeholder {
+    color: $color;
+  }
+}
+@mixin setColorAndHover($baseColor , $textColor:$fff) {
+  color: $baseColor;
+  &:hover {
+    background: lighten($baseColor, 8%);
+    color: $textColor;
+  }
+}
+// @include placeholder(#000);
+// .borr{
+//   @include transition(all .4s);
+//   @include gradient;
+// }
+// .child{
+//   @extend .borr;
+//   color: $main-color;
+// }

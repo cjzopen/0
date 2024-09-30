@@ -1,0 +1,1 @@
+;$(function(){function a(){$(this).text("- Close All"),$(".accordion input").prop("checked",!0),$(this).one("click",b)}function b(){$(this).text("+ Open All"),$(".accordion input").prop("checked",!1),$(this).one("click",a)}var c=$("#accordion-toggle");c.one("click",a)});

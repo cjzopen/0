@@ -1,0 +1,172 @@
+$_brown:#de4d18;
+$_brown-lighten:rgba(222, 77, 24, .8);
+$_white:#fff;
+$_black:#323232;
+$_gray:#f3f3f3;
+
+html{
+  font-size: 16px;
+}
+body{
+  color:$_black;
+  font-family: -apple-system,BlinkMacSystemFont,'Helvetica Neue','Noto Sans TC','Microsoft JhengHei',Arial,sans-serif;
+  background-color: rgb(223, 227, 228);
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+#all{
+  // position: relative;
+  max-width: 1000px;
+  margin:auto;
+  min-height: 100vh;
+  background-color: $_white;
+}
+// a:focus{
+//   outline: 1px dashed #0056b3;
+// }
+a:hover,a:focus{
+  text-decoration: none;
+}
+
+$color-list: ( -brown: $_brown, -brown-lighten: $_brown-lighten, -white: $_white, -black: $_black, -gray: $_gray );
+:root{
+  @each $list, $item in $color-list {
+    -#{$list}:$item;
+  }
+}
+@each $list, $item in $color-list {
+  .color#{$list} {
+    color: $item;
+  }
+  .bg#{$list} {
+    background-color: $item;
+  }
+}
+
+$btn-list: ( -brown: $_brown, -brown-light: $_brown-lighten );
+@each $list, $item in $btn-list {
+  .btn#{$list} {
+    color:$_white;
+    background-color: $item;
+    border-color: $item;
+    &:hover,&:active,&:focus,&-active{
+      background-color: $_white;
+      border-color: $item;
+      color:$item;
+    }
+    &:focus-within{
+      background-color: $_white;
+      border-color: $item;
+      color:$item;
+    }
+  }
+}
+// &:focus-within edge 會整段無視,導致寫在一起的其它東西也無效，所以拉出來另外寫
+
+// .btn-group-sm>.btn, .btn-sm {
+//   padding: .125rem .5rem;
+//   font-size: 1rem;
+// }
+.h3{
+  font-size: 1.625rem;
+}
+.h4{
+  font-size: 1.25rem;
+}
+.h1,.h2,.h3,.h4,.h5,.h6{line-height:1.5}
+hr{
+  width: 7.375rem;
+  height: 0.1875rem;
+  border: 0;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  background-color: $_brown;
+}
+.header-title{
+  background-image: url('../../img/bg.png');
+  background-size: cover;
+  min-height: 400px;
+  height: 400px;
+}
+
+h1{
+  font-weight: 900;
+  font-size: 3rem;
+  color:$_white;
+  position: relative;
+  // letter-spacing: 2px;
+  text-shadow: 0.25rem 0.25rem .25rem rgba(50,50,50,0.1);
+  padding-top: 6%;
+}
+@supports (-webkit-background-clip: text) {
+  h1{
+    color:transparent;
+    background:url('../../img/texure.png') repeat;
+    background-position: 40% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+.header-sub-text{
+  background:url('../../img/bg-2.png') repeat;
+  min-height: 200px;
+  transform: translateY(-1px);
+}
+.card-wrapper{
+  max-width: 390px;
+}
+.card{
+  border:0;
+  box-shadow: 0 0 0.25rem 2px $_gray;
+  transition:box-shadow .3s;
+  &:hover,&:focus{
+    box-shadow: 0 0 .75rem darken($_gray,50%);
+    transition:box-shadow .3s;
+  }
+  &.card-brown{
+    pointer-events: none;
+    &:hover,&:focus{
+      box-shadow: 0 0 0 1px $_brown;
+    }
+    a{
+      pointer-events: auto;
+    }
+  }
+  .position-absolute{
+    left: 6%;
+    top: 0;
+  }
+}
+.card-body-border-left{
+  border-left:4px solid red;
+  padding-left:calc(1.25rem - 4px);
+}
+#contact_form{
+  input,textarea{
+    width: 100%;
+    max-width: 400px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+}
+footer p{
+  margin-bottom: 10px;
+}
+
+
+@media (max-width: 767px){
+  html{
+    font-size: 14px;
+  }
+  .header-title{
+    height: 100vh;
+  }
+  h1{
+    font-size: 2rem;
+  }
+  .header-sub-title{
+    mix-blend-mode: difference;
+  }
+}
+

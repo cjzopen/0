@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<style>
+.menu-group {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px; /* 根據需要調整間隙 */
+}
+
+.menu-item {
+    flex: 1 1 25%; /* 四個一排 */
+    cursor: pointer; /* 讓鼠標變為指針形狀 */
+}
+
+/* 當螢幕寬度小於768px時 */
+@media (max-width: 768px) {
+    .menu-item {
+        flex: 1 1 100%; 
+    }
+}
+
+#detail-container {
+    margin-top: 20px;
+    display: none;
+}
+</style>
+  <div id="menu-container">
+    <div class="menu-group">
+      <div class="menu-item" data-detail="#detail-1">項目 1</div>
+      <div class="menu-item" data-detail="#detail-2">項目 2</div>
+      <div class="menu-item" data-detail="#detail-3">項目 3</div>
+      <div class="menu-item" data-detail="#detail-4">項目 4</div>
+    </div>
+    <div class="menu-group">
+      <div class="menu-item" data-detail="#detail-5">項目 5</div>
+      <div class="menu-item" data-detail="#detail-6">項目 6</div>
+    </div>
+    <div id="detail-container" class="detail-hidden"></div>
+</div>
+
+<!-- 詳細資訊的模板 -->
+<script type="text/template" id="detail-1">
+    <p>這是項目 1 的詳細資訊，可以包含 <strong>HTML</strong> 標籤。</p>
+</script>
+<script type="text/template" id="detail-2">
+    <div>
+        <p>這是項目 2 的詳細資訊。</p>
+        <ul>
+            <li>列表項 1</li>
+            <li>列表項 2</li>
+        </ul>
+    </div>
+</script>
+<script type="text/template" id="detail-3">
+  <p>這是項目 3 的詳細資訊，可以包含 <strong>HTML</strong> 標籤。</p>
+</script>
+<script type="text/template" id="detail-4">
+  <p>這是項目 4 的詳細資訊，可以包含 <strong>HTML</strong> 標籤。</p>
+</script>
+<script type="text/template" id="detail-5">
+  <p>這是項目 5 的詳細資訊，可以包含 <strong>HTML</strong> 標籤。</p>
+</script>
+<script type="text/template" id="detail-6">
+  <p>這是項目 6 的詳細資訊，可以包含 <strong>HTML</strong> 標籤。</p>
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+$(document).ready(function() {
+  $('.menu-item').click(function() {
+    var detailId = $(this).data('detail');
+    var detailContent = $(detailId).html();
+    var $detailContainer = $('#detail-container');
+
+    // 如果detail容器不存在，則創建一個新的
+    if ($detailContainer.length === 0) {
+      $detailContainer = $('<div id="detail-container" class="col-12 mb-3"></div>');
+      $('body').append($detailContainer); // 或將其放置於合適的位置
+    }
+
+    // 更新並顯示detail
+    updateDetailPosition($(this), $detailContainer, detailContent);
+  });
+
+  function updateDetailPosition(clickedItem, detailContainer, content) {
+    // 移除先前的active類別並設置當前項目為active
+    $('.menu-item').removeClass('active');
+    clickedItem.addClass('active');
+
+    // 更新並以動畫顯示detail
+    detailContainer.hide().html(content);
+
+    var screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+    if (screenWidth < 768) {
+      // 當視窗寬度小於768px，將detail放在點擊的項目的下方
+      clickedItem.after(detailContainer);
+    } else {
+      // 其他情況，將detail放在整個組的後面
+      clickedItem.closest('.menu-group').after(detailContainer);
+    }
+
+    detailContainer.slideDown();
+  }
+
+  $(window).resize(function() {
+    var activeItem = $('.menu-item.active');
+    var $detailContainer = $('#detail-container');
+
+    if (activeItem.length && $detailContainer.is(':visible')) {
+      updateDetailPosition(activeItem, $detailContainer, $detailContainer.html());
+    }
+  });
+});
+</script>
+</body>
+</html>

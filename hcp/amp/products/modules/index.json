@@ -1,0 +1,48 @@
+{
+  "bookendVersion": "v1.0",
+  "shareProviders": [
+    "facebook",
+    "twitter",
+    "email"
+  ],
+  "components": [
+    {
+      "type": "heading",
+      "text": "更多內容"
+    },
+    {
+      "type": "small",
+      "title": "產品特色",
+      "url": "https://hcp.ares.com.tw/products/features/",
+      "image": "https://hcp.ares.com.tw/img/products/features/feature-bg-2.jpg",
+      "category": "HCP"
+    },
+    {
+      "type": "small",
+      "title": "產品效益",
+      "url": "https://hcp.ares.com.tw/products/benefits/",
+      "image": "https://hcp.ares.com.tw/img/products/benefits/benefit-bg-m.png",
+      "category": "HCP"
+    },
+    {
+      "type": "small",
+      "title": "最新消息與成功案例",
+      "url": "https://hcp.ares.com.tw/news/",
+      "image": "https://hcp.ares.com.tw/img/events.jpg",
+      "category": "HCP"
+    },
+    {
+      "type": "cta-link",
+      "links": [
+        {
+          "text": "立即來電",
+          "url": "tel:+886-2-25221351,,301"
+        },
+        {
+          "text": "表單諮詢",
+          "url": "https://hcp.ares.com.tw/contact/"
+        }
+      ]
+    }
+  ]
+}

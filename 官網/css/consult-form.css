@@ -1,0 +1,71 @@
+#contact-area,#product-select input{
+  display: none;
+}
+#product-select label{
+  box-shadow: 0 0 0 1px inset #4479bc;
+  border-radius: 1rem;
+  padding: .25rem .75rem;
+  margin: 0;
+  color: #4479bc;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+#product-select input:checked+label{
+  background-color: #4479bc;
+  color: #fff;
+}
+.product-type-title{
+  opacity: .4
+}
+#personal input,#personal select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2.25rem;
+  border: 1px solid #333;
+  outline: none;
+  box-shadow: none;
+  border-radius: .25rem;
+  padding: .2rem;
+}
+#personal select{
+  border-radius: 0;
+}
+.select-wrapper{
+  position: relative;
+}
+.select-wrapper::after{
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  right: 4px;
+  top: 1rem;
+  pointer-events: none;
+}
+@supports(grid-template-columns: repeat(auto-fit, 1rem)) {
+  #product-select ul{
+    display: grid!important;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, 16rem);
+    /* justify-content:center; */
+  }
+  #product-select label{
+    width: 100%;
+  }
+  #product-select label::after{
+    content: '✔';
+    position: absolute;
+    right: 8px;
+    top: 4px;
+    color: #fff;
+  }
+}

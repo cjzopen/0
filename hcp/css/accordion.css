@@ -1,0 +1,31 @@
+.area-accordion {
+  background-color: #FFFCF9;
+  color: #444;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+}
+.area-accordion:hover {
+  background-color: #EEE4E2;
+}
+.area-accordion.mb-0:first-of-type:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.area-accordion.mb-0.active:first-of-type:after {
+  content: "\2212";
+}
+.area-accordion-panel {
+  padding: 0 1rem;
+  background-color: #EEE4E2;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}

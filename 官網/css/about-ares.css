@@ -1,0 +1,221 @@
+html{scroll-behavior:smooth;}
+hr{margin-bottom:3rem;}
+.slider {color:#AC9A89;}
+.thumbnail{max-width:21.875rem;margin-left:auto;margin-right:auto;}
+div.pp_default .pp_nav .pp_play, div.pp_default .pp_nav .pp_pause {display: none;}
+.year-list article{
+	position:relative;
+	line-height:1.5;
+}
+.profile.u4 .flex-box{
+	justify-content: start;
+}
+.profile.survice .icon{
+	background-color: #70b2df;
+}
+.year-list article:before{
+	content:'';
+	position:absolute;
+	top: 1.5rem;
+	left:1.7rem;
+	width: 1px;
+	height: 100%;
+	background-color:#2858aa;
+}
+.milestone.year-list article:after{
+	content: attr(data-year);
+	position: absolute;
+	left: -1px;
+	top: 0;
+	border-radius: 50%;
+	width: 3.5rem;
+	height: 3.5rem;
+	line-height: 3.45rem;
+	text-align: center;
+	color: #fff;
+	background-color: #2858aa;
+}
+.milestone.year-list article:nth-child(even):after{
+	background-color:#7d7d7d;
+}
+.year-list .event-list{
+	padding-left:4rem;
+	padding-top:0.25rem;
+	padding-bottom: 0.25rem;
+}
+.year-list ul{
+	position:relative;
+	border:1px solid #2858aa;
+	border-radius:.25rem;
+	/*margin-top:.5rem;*/
+	margin-bottom:.5rem;
+	padding: .5rem;
+	padding-left:2rem;
+}
+.year-list article:nth-child(even) ul{
+	background-color: #ebebeb;
+}
+.year-list ul:before{
+	content:'';
+	position:absolute;
+	width: 8px;
+    height: 8px;
+    background-color:#fff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #2858aa transparent transparent #2858aa;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: -0.25rem;
+    top: 1rem;
+}
+.year-list article:nth-child(even) ul:before{
+	background-color:#ebebeb;
+}
+.year-list li iframe{
+	display:inline-block;
+	width:100%;
+	max-width:21.875rem;
+	max-height: 12.3rem;
+	height:12.3rem;
+	height:22vw;
+	margin:1rem 1rem 1rem 0;
+}
+.year-list li figure{
+	display:inline-block;
+	width:100%;
+	max-width:21.875rem;
+}
+.milestone li>a:hover{
+	color:#2858aa;
+}
+.vision.pb {
+	padding-bottom:2.5rem;
+}
+.vision figure{
+	position:relative;
+}
+.vision figcaption li{
+	position:absolute;
+	width: 23rem;
+    list-style-type:none;
+    margin:0;
+}
+.vision figcaption h4 {
+	border-bottom:1px solid;
+}
+.vision figcaption li:first-child{
+	top: -1rem;
+	left: 3%;
+}
+.vision figcaption li:nth-child(2){
+	top: -1rem;
+	left: 67%;
+}
+.vision figcaption li:nth-child(3){
+	top: 11rem;
+	left: 3%;
+}
+.vision figcaption li:last-child{
+	top: 11rem;
+	left: 67%;
+}
+.vision p.icon{
+	background-image:url(/img/about/vision/gartner.png);
+	background-size:contain;
+	box-shadow:0 0 1px 1px #ebebeb;
+	margin-top:3rem;
+	-webkit-transition: all 0.4s;
+    transition:all 0.4s;
+}
+.vision a:hover p.icon{
+	box-shadow: 4px 4px 5px #d2d2d2, 5px 5px 5px #e2e2e2, 6px 6px 5px #e9e9e9, 7px 7px 5px #efefef, 8px 8px 5px #fafafa;
+    -webkit-transition: all 0.4s;
+    transition:all 0.4s;
+    background-size:contain;
+}
+
+.partners .thumbnail{
+	min-height:12.5rem;
+	padding-top: 1.5rem;
+}
+.partners.view .thumbnail{
+	min-height:20rem;
+}
+.partners .thumbnail h5 {
+	font-size: 125%;
+}
+.partners .thumbnail hr{
+	width: 80%;
+	height: 1px;
+	background-color:#333;
+	margin-bottom:1rem;
+}
+.partners .thumbnail:hover {
+    border: 1px solid #ddd;
+    box-shadow: 4px 4px 5px #d2d2d2, 5px 5px 5px #e2e2e2, 6px 6px 5px #e9e9e9, 7px 7px 5px #efefef, 8px 8px 5px #fafafa;
+    -webkit-transition: all 0.4s;
+    transition:all 0.4s;
+}
+
+.csr table a{
+	display:inline-block;
+	min-width:15rem;
+	padding:.25rem 1rem;
+}
+.csr a:hover{color:#f9a52d;}
+.csr.year-list article:after{
+	/* background-color: transparent; */
+	/* background-image:url(/img/about/csr/love-icon.png); */
+	/* background-size:53px 53px; */
+	/* background-repeat:no-repeat; */
+	/* background-position:top center; */
+	content: attr(data-year);
+	position:absolute;
+	top: -3px;
+	left: -3px;
+	color:#fff;
+	text-align:center;
+	width: 3.75rem;
+	height: 3.75rem;
+	background-color: #ee347e;
+	border-radius:50%;
+	line-height:3.75rem;
+	cursor:pointer;
+	font-size: 1rem;
+}
+.csr.year-list h4{
+	cursor:pointer;
+	-webkit-transition:all 0.4s;
+	transition:all 0.4s;
+}
+.csr.year-list h4.on{
+	font-size: 150%;
+	-webkit-transition:all 0.4s;
+	transition:all 0.4s;
+}
+.csr img{
+	box-shadow: 0 0 0.25rem #ccc;
+    border: .0625rem solid #ddd;
+    border-radius: .25rem;
+}
+
+@media (max-width: 1199px) {
+	.vision {
+		padding-bottom:3.75rem;
+	}
+	.vision figcaption ol{
+		padding:0;
+	}
+	.vision figcaption li{
+		position:static;
+		width: 50%;
+	}
+}
+@media (max-width: 767px) {
+	.vision figcaption li{
+		width: 100%;
+	}
+
+}

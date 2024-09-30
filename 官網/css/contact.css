@@ -1,0 +1,67 @@
+body{scroll-behavior:smooth;}
+.fix-right-box{display:none;}
+hr{margin-bottom:3rem;}
+.slider {color:#AC9A89;}
+#contact,#social {padding-bottom:5.625rem;}
+#contact h3{margin-top:0;font-size: 1.25rem;}
+#contact h4{padding:0.25rem 0;}
+#contact ul{list-style-type: none;}
+
+#social p.icon {
+    padding: 0;
+    box-shadow: 0 0 1px 1px #70B2DF;
+    background-size:80%;
+}
+#social p.icon.fb {
+    background-image: url(/img/about/contact/fb-icon.svg);
+}
+#social p.icon.google {
+    background-image: url(/img/about/contact/G-icon.svg);
+}
+#social p.icon.youtube {
+    background-image: url(/img/about/contact/youtube-icon.svg);
+}
+#social p.icon.twitter {
+    background-image: url(/img/about/contact/twitter-icon.svg);
+}
+#social p.icon.linkedin {
+    background-image: url(/img/about/contact/linkedin-icon.svg);
+}
+@media (min-device-width: 1024px) {
+    #social p.icon:hover {
+        background-color:#70B2DF;
+        background-size:100%;
+    }
+    #social p.icon.fb:hover {
+        background-image: url(/img/about/contact/fb-icon-w.svg);
+    }
+    #social p.icon.youtube:hover {
+        background-image: url(/img/about/contact/youtube-icon-w.svg);
+    }
+    #social p.icon.linkedin:hover {
+        background-image: url(/img/about/contact/linkedin-icon-w.svg);
+    }
+}
+#ares-map {padding-bottom:6.75rem;}
+#ares-map h4 {font-size: 1.5rem;margin-left:-2rem;}
+#ares-map .col-xs-12 {opacity:0;}
+#ares-map .map-box {padding-bottom: 0.25rem;margin:0 auto; margin-bottom:1rem; border-bottom:1px solid #f9a52d; max-width: 500px;}
+#ares-map iframe {max-width: 100%;}
+#ares-map .address {margin:0 auto; margin-bottom: 2.5rem; max-width: 500px;}
+#ares-map .address>*{margin:0;line-height:1.25rem;}
+#ares-map .active {	
+	-webkit-animation: move-up .7s forwards;
+	-moz-animation: move-up .7s forwards;
+	animation: move-up .7s forwards;
+	-webkit-animation-delay: 0.3s;
+	-moz-animation-delay: 0.3s;
+	animation-delay: 0.3s;
+}
+@-webkit-keyframes move-up {
+	0% {padding-top: 4rem; opacity:0;}	
+	100% {padding-top: 0; opacity:1;}
+}
+@keyframes move-up {
+	0% {padding-top: 4rem; opacity:0;}	
+	100% {padding-top: 0; opacity:1;}
+}

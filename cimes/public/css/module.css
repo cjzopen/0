@@ -1,0 +1,7 @@
+#module-icon svg{
+  width: min(max(12vw,3rem),200px);
+  height: min(max(12vw,3rem),200px);
+}
+h1{
+  font-size: min(max(4vw,1.25rem),2rem);
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>無障礙網頁</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container my-4">
+  <h1>無障礙網頁</h1>
+  <details open class="mb-5 border">
+    <summary>TL;DR</summary>
+    <ul>
+      <li>keyboard-only</li>
+      <li>HTML5</li>
+      <li>顏色對比度、避免閃爍與快速動態</li>
+      <li>ARIA、role</li>
+      <li>小心使用 JavaScript</li>
+      <li>CSS focus</li>
+    </ul>
+  </details>
+  <section class="mb-5">
+    <h2>keyboard-only</h2>
+    <p>使用 tab 游移和其它按鍵互動的使用者</p>
+    <h3>互動區域使用超連結與buttom</h3>
+    <ul>
+      <li>盡量避免另開新視窗</li>
+      <li>tabindex=0,-1</li>
+      <li>accesskey</li>
+      <li>title</li>
+      <li>disabled</li>
+      <li>文字要明確說明用途且簡短</li>
+    </ul>
+  </section>
+  <section class="mb-5">
+    <h2>HTML5</h2>
+    <ul>
+      <li>用 h1~h6 編排內容且不得誤用和順序錯誤</li>
+      <li>使用者會關閉所有圖片載入，一定要有alt且文字要明確說明，重要內容要有上下文</li>
+      <li>無障礙表單與表格</li>
+      <li>video tag</li>
+    </ul>
+  </section>
+  <section class="mb-5">
+    <h2>顏色對比度、避免閃爍與快速動態</h2>
+    <p>沒有說明切確的數字</p>
+  </section>
+  <section class="mb-5">
+    <h2>ARIA、role</h2>
+    <p>類似 microdata 這類的結構化資料標記</p>
+  </section>
+  <section class="mb-5">
+    <h2>小心使用 JavaScript</h2>
+    <ul>
+      <li>有些動態內容顯示可能有問題</li>
+      <li>內容不要像某些廣告一樣突然出現(快速動態)</li>
+      <li>小心使用 onMouseOver +onFocus、 onMouseOut + onBlur、 onMouseDown + onKeyDown、 onMouseUp + onKeyUp</li>
+      <li>切確定義主動事件，而不是用 onFocus</li>
+    </ul>
+  </section>
+  <section class="mb-5">
+    <h2>CSS focus</h2>
+    <ul>
+      <li>重要內容不要用css產生，有些使用者的瀏覽器能自定義樣式</li>
+      <li>grid</li>
+      <li>必需設計符合色盲色弱的互動</li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>

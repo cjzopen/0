@@ -1,0 +1,55 @@
+main{
+  /* --orange:#F26722; */
+  --orange:#C4541B;
+  --blue:#164772;
+}
+.color-main{
+  color:var(--orange)
+}
+
+.bg-main{
+  background-color: var(--orange);
+}
+#fishing{
+  --orange:#ff912b;
+  background-color: #333;
+  color:#fff;
+}
+.hr::after, .dline::after{
+  background-color: var(--orange);
+}
+.dline::after{
+  content:'';
+  display: block;
+  width: 264px;
+  height: 3px;
+  margin-bottom:1.5rem;
+}
+.case{
+  color:var(--blue);
+  border:1px solid;
+  border-color:white;
+}
+.case:hover{
+  border-color: var(--orange);
+}
+.case::after{
+  content: '\2192';
+  font-size:1.5rem;
+  font-weight: bold;
+  position: absolute;
+  right:1rem;
+  bottom:1rem;
+}
+.case:hover::after{
+  color:var(--orange);
+}
+.case svg{
+  display: none;
+}
+
+@media (min-width:1030px) {
+  #main-header{
+    clip-path: ellipse(55% 100% at 50% 0%);
+  }
+}

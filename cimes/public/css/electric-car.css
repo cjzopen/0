@@ -1,0 +1,33 @@
+:root{
+  --blue:#4f80ff;
+  --yellow:#fbab18;
+  --silver:#b8c1d0;
+}
+hr{
+  background-color: #4f80ff;
+}
+.blue-color{
+  color: #4f80ff !important;
+}
+.blue-bg{
+  background-color: #4f80ff!important;
+}
+.yellow-color{
+  color: #fbab18 !important;
+}
+.yellow-bg{
+  background-color: #fbab18!important;
+}
+.big-text{
+  font-size: 3rem;
+  font-size: min(max(3.5vw, 24px), 3rem);
+}
+.card{
+  height: auto;
+}
+.title{
+  border-bottom:1px solid #fff;
+}
+#case{
+  background-color: #b8c1d0;
+}

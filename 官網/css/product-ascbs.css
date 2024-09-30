@@ -1,0 +1,16 @@
+.panel-bs{max-width:800px;}
+#heading1{
+  background-color:#b4ca4a;
+  background-image: -webkit-linear-gradient(90deg, #b4ca4a 0%, #dccb4f 100%);
+  background-image: linear-gradient(90deg, #b4ca4a 0%, #dccb4f 100%);
+}
+#heading2{
+  background-color:#f4aa21;
+  background-image: -webkit-linear-gradient(90deg, #f4aa21 0%, #facf5f 100%);
+  background-image: linear-gradient(90deg, #f4aa21 0%, #facf5f 100%);
+}
+#heading3{
+  background-color:#e16030;
+  background-image: -webkit-linear-gradient(90deg, #e16030 0%, #ffa37b 100%);
+  background-image: linear-gradient(90deg, #e16030 0%, #ffa37b 100%);
+}

@@ -1,0 +1,59 @@
+.thumbnail * {
+  transition: all 0.4s ease;
+}
+hr{margin-bottom:3rem;}
+.slider {color:#fff;}
+#four ul{
+	list-style-type:none;
+	line-height:1.5;
+	padding:0;
+}
+#four li{
+	position:absolute;
+	width:24rem;
+}
+#four li:first-child{
+	top: -1.5rem;
+	left: 0;
+}
+#four li:nth-child(2){
+	top: -1.5rem;
+	right:0;
+}
+#four li:nth-child(3){
+	bottom:-1.5rem;
+	left: 0;
+}
+#four li:last-child{
+	bottom:-1.5rem;
+	right:0;
+}
+/* .index .thumbnail{max-width:21.875rem;margin-left:auto;margin-right:auto;padding:0 0 1rem;} */
+.outsourcing.view .row hr{
+	width: 40%;
+	height: 1px;
+	background-color:#333;
+	margin-bottom:1rem;
+}
+
+#outsourcing section .col-md-4{padding-top:2rem;max-width:24.375rem;pointer-events:none;}
+#outsourcing h3 {padding-left:15px;}
+#outsourcing .thumbnail{overflow:hidden;pointer-events:all;padding:0;}
+#outsourcing .thumbnail p{position:relative;overflow:hidden;height:12.5rem;width: 100%;margin: 0;}
+#outsourcing .svg{position:absolute;left: 0;right: 0;top:200%;bottom:0;margin:auto;opacity:0;width: 100%;height: 100%;background-color:rgba(50,50,50,0.8);}
+#outsourcing .svg img{max-width:100%;height: 100%;padding: 15px;}
+#outsourcing .thumbnail h5{font-size: 125%;margin-top:0;}
+#outsourcing .thumbnail:hover .svg{opacity:1;top:0;}
+#outsourcing .thumbnail.link p {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAfxJREFUeNrc2L1KA0EQAOD1XIsTTiSFICm0CIqFECKk9Uot0tiZWmKljY2tD5BCrMxD2MZCiLZCEGxESRsFixSmSGPhTQhHkPvZ5GZn9nYghBBy5LuZnZ09ISyJynm77NgCCd46ji2Q4LXq2AKBz44tkNxioiC5xMRBcodJguQKkwbJDUYFArGYAwgAXtIgxmdmAumoQIzGTEHKqr9xbIEYiZkXYhwmC8QoTFaIMRgMiBEYLAg7BhPCisGGsGF0QFgwuiDkGJ0QUoxuCBmGAkKCoYJASC5I86Qi/N211GsMR7+icfMsPvo/fJlJguyVCkoQCM+VonVWFVvFFZ7MqJZW674nbtu9xGt1rw9CUFqGJPcaqe9vCm9ZKmcoCSS5F3vjsDT+o7OUXBxIcnet2tVTsB682O9PA+x0wNoBkH/5oAeTpf3W/Y1xQ1CJx9fvsIFoKbOs+8gxrBkXp0AkJwQiqlwSO2BQYugYrJ394mhHbCesmagyQ8Vgjii1alG5zGAaQMVgz1psZaZjaIQZTTUz3d4AJzO6pl9os6RlpnOMJy0z3eeRuDJ77w9F8+4Nb5+hOFjFlZnnLuFtmlQnxFnLbGYMFQSy8n+QTIv1gquOoYB8DUYhRnXIVOlqC1wPH2CUn3fAhJvxObkhkRhKiNZHTTZAxhhbIBB/AgwAwIvSiQFVrXEAAAAASUVORK5CYII=) right bottom;background-repeat: no-repeat;
+}
+
+@media (max-width: 1199px) {
+	#four li{
+		position:static;
+		top:auto;
+		left:auto;
+		right:auto;
+		bottom:auto;
+	}
+}

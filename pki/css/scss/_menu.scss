@@ -1,0 +1,200 @@
+nav{
+  height: auto;
+  line-height: 4rem;
+  position: relative;
+  // text-transform:capitalize;
+}
+
+nav #sort {
+  z-index: 1030;
+  position: absolute;
+  background-color: $_white;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  max-width: 90rem;
+  display: none;
+  line-height: 3;
+  box-shadow: 0 4px 6px #989898
+}
+
+nav #sort .arrow-down {
+  display: none
+}
+
+nav li {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  position: relative
+}
+
+nav ul>li>a {
+  display: block;
+  position: relative;
+  box-sizing: border-box
+}
+
+.under-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 15rem;
+  text-align: right;
+  z-index: 1030;
+  box-shadow: 0 0 1rem $_gray2;
+  border-radius: 5px;
+  display: none;
+  line-height: 1.5;
+  svg * {
+    fill: $_red
+  }
+   li {
+    height: auto;
+    margin-bottom:.5rem;
+  }
+  a:hover{
+    color:$_red;
+  }
+  &:hover:before {
+    display: none
+  }
+}
+
+
+
+.under-menu-headline .active {
+  color: $_white;
+  background-color: $_red!important
+}
+
+#menu-button {
+  position: relative;
+  width: 2rem;
+  height: 3.75rem;
+  font-size: 0;
+}
+
+#menu-button:before,#menu-button:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: $_red;
+  left: 0;
+  top: 50%;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  transition: all .25s
+}
+
+#menu-button span {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: $_red;
+  left: 0;
+  top: 50%;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  transition: opacity .25s
+}
+
+#menu-button:before {
+  -webkit-transform: translate3d(0,-10px,0);
+  transform: translate3d(0,-10px,0)
+}
+
+#menu-button:after {
+  -webkit-transform: translate3d(0,10px,0);
+  transform: translate3d(0,10px,0)
+}
+
+#menu-button.act span {
+  opacity: 0
+}
+
+#menu-button.act:before {
+  -webkit-transform: rotate3d(0,0,1,45deg);
+  transform: rotate3d(0,0,1,45deg)
+}
+
+#menu-button.act:after {
+  -webkit-transform: rotate3d(0,0,1,-45deg);
+  transform: rotate3d(0,0,1,-45deg)
+}
+@media (min-width: 1260px) {
+  #header .container{
+    max-width: 91%;
+  }
+  nav #sort {
+    position:static;
+    width: auto;
+    display: block!important;
+    line-height: 4rem;
+    box-shadow: none
+  }
+
+  nav #sort .arrow-down {
+    display: inline
+  }
+
+  nav li {
+    width: auto
+  }
+
+  nav ul>li>a:hover:before {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    left: -1rem;
+    display: block;
+    width: calc(100% + 1rem * 2);
+    height: 3px;
+    background-color: $_red
+  }
+
+  nav ul>li>a:hover svg {
+    fill: $_red
+  }
+
+  nav li.act>a {
+    color: $_red
+  }
+
+  nav li.act>a:before {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    left: -1rem;
+    display: block;
+    width: calc(100% + 1rem * 2);
+    height: 3px;
+    background-color: $_red
+  }
+
+  nav li.act>a:after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    left: calc(50% - 1rem / 2);
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: $_red transparent;
+    border-width: 0 .5rem .5rem
+  }
+
+  nav li.act>a svg {
+    fill: $_red
+  }
+
+  nav #menu-button {
+    display: none
+  }
+
+  nav a:hover+.under-menu,nav a:focus+.under-menu,nav .under-menu:hover {
+    display: block
+  }
+}

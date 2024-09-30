@@ -1,0 +1,59 @@
+#banner{
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #EAF2FF;
+}
+#apply{
+  background-position: center bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#apply .circle{
+  width: 160px;
+  height: 160px;
+  max-width: 160px;
+  margin: auto;
+}
+#benefit{
+  background-color: #EAF2FF;
+  clip-path: ellipse(150% 100% at 50% 0%);
+  background-image: linear-gradient(to top, #EAF2FF, #fff);
+}
+#consult-section{
+  clip-path: ellipse(100% 67% at 50% 67%);
+}
+.position-relative{
+  position: relative;
+}
+.position-absolute{
+  position: absolute;
+}
+#iceberg-pc{
+  display: none;
+}
+#iceberg-mobile *{
+  font-size: 14px;
+}
+.iceberg-left::after,.iceberg-right::before{
+  content:'';
+  width: min(max(10vw, 120px), 148px);
+  height: 1px;
+  background-color: #707070;
+  margin:0 0 0 8px;
+}
+.iceberg-right::before{
+  margin:0 8px 0 0;
+}
+@media (min-width:1088px){
+  #iceberg-pc{
+    display: block;
+  }
+  #iceberg-mobile{
+    display: none;
+  }
+}
+@media (max-width:680px){
+  #banner{
+    background-image: none!important;
+  }
+}

@@ -1,0 +1,86 @@
+@import "base/var";
+.accordion{
+  border:1px solid $gray-color;
+  border-radius: .25rem;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  &.no-border{
+    border:0;
+  }
+  input[type="radio"],input[type="checkbox"]{
+    display: none;
+  }
+  label{
+    display: block;
+    width: 100%;
+    padding:.5rem 1rem;
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+    &:before,
+    &:after{
+      content:'';
+      display: inline-block;
+      position: absolute;
+      right: .5rem;
+      top:49%;
+      width: 1rem;
+      height: 3px;
+      transform-origin: center center;
+      background-color: $fff;
+      @include transitions(transform, .6s);
+    }
+    &:before{
+      transform:rotate(0deg);
+    }
+    &:after{
+      transform:rotate(90deg);
+    }
+    &.main-cross{
+      &:before,
+      &:after{
+        background-color: $main-color;
+      }
+    }
+    &.no-cross{
+      &:before,
+      &:after{
+        display: none;
+      }
+    }
+  }
+  .accordion-body{
+    padding: 1rem;
+    max-height: 0;
+    will-change:max-height;
+    overflow: hidden;
+    @include transitions(max-height, .6s,cubic-bezier(0,.87,0,1));
+    &>*{
+      display: none;
+    }
+    &.border-bottom{
+      border-bottom: 1px solid $border-color;
+    }
+  }
+  input[type="radio"]:checked ~ label,
+  input[type="checkbox"]:checked ~ label{
+    &:before{
+      transform:rotate(-495deg);
+      @include transitions(transform, .6s);
+    }
+    &:after{
+      transform:rotate(-405deg);
+      @include transitions(transform, .6s);
+    }
+  }
+  input[type="radio"]:checked+label ~ .accordion-body,
+  input[type="checkbox"]:checked+label ~ .accordion-body{
+    height: auto;
+    max-height: 60rem;
+    overflow: auto;
+    @include transitions(max-height, .6s,cubic-bezier(.87,0,1,.13));
+    &>*{
+      display: block;
+    }
+  }
+}

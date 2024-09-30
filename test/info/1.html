@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>分機表</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+<style>
+html,body{
+  background-color: #eee;
+}
+.table-sm td{padding:0 .1rem}
+.border{border:1px solid #888!important}
+.table{margin-bottom: 0;}
+.title{background-color: #bfbfbf;}
+.director{background-color: #76e3cd;}
+.secretary{background-color: #f786ea;}
+.active{background-color: #ccdbeb;}
+.name{cursor: pointer;user-select: none;}
+.name:not(.director):not(.secretary):hover{background-color: #ccdbeb;}
+
+</style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row no-gutters">
+      <div class="col-12 col-md-3">
+        <div class="department border">
+          <div class="border text-center title">A0</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>200</td><td><span class="name" data-director="" data-secretary="Jenny Wang（汪曉芳）" data-name="Harry Yu（余宏揚）"></span></td><td><span class="text-danger">董事長</span> harry</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">A1</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>300</td><td><span class="name" data-director="" data-secretary="Jenny Wang（汪曉芳）" data-name="Frank Lin（林聖懿）"></span></td><td><span class="text-danger">總經理</span> frank</td></tr>
+              <tr><td>301</td><td><span class="name" data-director="" data-secretary="Jenny Wang（汪曉芳）" data-name="Jenny Wang（汪曉芳）"></span></td><td>jenny</td></tr>
+              <tr><td>500</td><td><span class="name" data-director="" data-secretary="Jenny Wang（汪曉芳）" data-name="C.L. Lin（林青龍）"></span></td><td><span class="text-danger">資訊長</span> cllin</td></tr>
+              <tr><td>860</td><td><span class="name" data-director="" data-secretary="Jenny Wang（汪曉芳）" data-name="Gavin Hsian（向仁中）"></span></td><td>gavinhsian</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">A2 管理部（5F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>210</td><td><span class="name" data-director="Carrie Yu（余沁薇）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Chloe Chu（曲瑋翎）"></span></td><td>chloe.chu</td></tr>
+              <tr><td>803</td><td><span class="name" data-director="Carrie Yu（余沁薇）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Vicky Kuo（郭倖妏）"></span></td><td>vickykuo</td></tr>
+              <tr><td>813</td><td><span class="name" data-director="Carrie Yu（余沁薇）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Shiaw Yi（丁孝儀）"></span></td><td>shiawyi</td></tr>
+              <tr><td>821</td><td><span class="name" data-director="Carrie Yu（余沁薇）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Nicole Hung（洪紫倪）"></span></td><td>nicole.hung</td></tr>
+              <tr><td>822</td><td><span class="name" data-director="Carrie Yu（余沁薇）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Caroline Chang（張淳惠）"></span></td><td>caroline.chang</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">A3 財務部（5F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>810</td><td><span class="name" data-director="Teresa（王翠英）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Teresa（王翠英）"></span></td><td>teresa1658</td></tr>
+              <tr><td>812</td><td><span class="name" data-director="Teresa（王翠英）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Yahsin（侯雅馨）"></span></td><td>yahsin1755</td></tr>
+              <tr><td>814</td><td><span class="name" data-director="Teresa（王翠英）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Alice Lee（李家鳳）"></span></td><td>alice.lee</td></tr>
+              <tr><td>816</td><td><span class="name" data-director="Teresa（王翠英）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Mandy Wang（王筱晶）"></span></td><td>mandy.wang</td></tr>
+              <tr><td>818</td><td><span class="name" data-director="Teresa（王翠英）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Sharon Wu（吳宜珊）"></span></td><td>sharon.wu</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">BNK1 銀行金融業務（3F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>317</td><td><span class="name" data-director="Frank Lin（林聖懿）" data-secretary="Jenny Wang（汪曉芳）" data-name="Fion Chen（陳靜木棻）"></span></td><td>fion</td></tr>
+              <tr><td>342</td><td><span class="name" data-director="Frank Lin（林聖懿）" data-secretary="Jenny Wang（汪曉芳）" data-name="Andy Liu（劉逸傑）"></span></td><td>andyliu</td></tr>
+              <tr><td>345</td><td><span class="name" data-director="Frank Lin（林聖懿）" data-secretary="Jenny Wang（汪曉芳）" data-name="Rita Lee（李宜純）"></span></td><td>ritalee1735</td></tr>
+              <tr><td>347</td><td><span class="name" data-director="Frank Lin（林聖懿）" data-secretary="Jenny Wang（汪曉芳）" data-name="Jenny Liu（留麗娟）"></span></td><td>jennyliu1531</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">BNS12 Oracle+財務報表業務（5F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>361</td><td><span class="name" data-director="Dean（蔡明璋）" data-secretary="Jenny Wang（汪曉芳）" data-name="Dean（蔡明璋）"></span></td><td>dean1512</td></tr>
+              <tr><td>362</td><td><span class="name" data-director="Dean（蔡明璋）" data-secretary="Jenny Wang（汪曉芳）" data-name="Justin Liu（劉尚智）"></span></td><td>justin.liu</td></tr>
+              <tr><td>363</td><td><span class="name" data-director="Dean（蔡明璋）" data-secretary="Jenny Wang（汪曉芳）" data-name="Hardaway Liu（劉子猷）"></span></td><td>hardway1598</td></tr>
+              <tr><td>366</td><td><span class="name" data-director="Dean（蔡明璋）" data-secretary="Jenny Wang（汪曉芳）" data-name="Ricky（李振安）"></span></td><td>ricky1883</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">CST0 Oracle 顧問（5F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>634</td><td><span class="name" data-director="Vicki Huang（黃善羚）" data-secretary="Ching-shang Lin（林景聖）" data-name="Vicki Huang（黃善羚）"></span></td><td><span class="text-danger">協理</span> vickihuang</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">CST2 Oracle 顧問（5F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>581</td><td><span class="name" data-director="Vicki Huang（黃善羚）" data-secretary="Ching-shang Lin（林景聖）" data-name="Michelle（張玲玲）"></span></td><td>michelle1555</td></tr>
+              <tr><td>631</td><td><span class="name" data-director="Vicki Huang（黃善羚）" data-secretary="Ching-shang Lin（林景聖）" data-name="Eric Sung（宋x剛）"></span></td><td>ericsung1540</td></tr>
+              <tr><td>632</td><td><span class="name" data-director="Vicki Huang（黃善羚）" data-secretary="Ching-shang Lin（林景聖）" data-name="Jason（謝孔誠）"></span></td><td>jason1864</td></tr>
+              <tr><td>635</td><td><span class="name" data-director="Vicki Huang（黃善羚）" data-secretary="Ching-shang Lin（林景聖）" data-name="Lenny Lee（李嵐軒）"></span></td><td>lenny.lee</td></tr>
+              <tr><td>639</td><td><span class="name" data-director="Vicki Huang（黃善羚）" data-secretary="Ching-shang Lin（林景聖）" data-name="Andy Yang（楊萬超）"></span></td><td>andy.yang</td></tr>
+              <tr><td>640</td><td><span class="name" data-director="Vicki Huang（黃善羚）" data-secretary="Ching-shang Lin（林景聖）" data-name="Daisy（鄭莉蘭）"></span></td><td>daisy1652</td></tr>
+              
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+      <div class="col-12 col-md-3">
+        <div class="department border">
+          <!-- <div class="border text-center title"></div> -->
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>641</td><td><span class="name" data-director="Vicki Huang（黃善羚）" data-secretary="Ching-shang Lin（林景聖）" data-name="May（蔣文方）"></span></td><td>may1538</td></tr>
+              <tr><td>643</td><td><span class="name" data-director="Vicki Huang（黃善羚）" data-secretary="Ching-shang Lin（林景聖）" data-name="Allison Huang（黃芎華）"></span></td><td>allison.huang</td></tr>
+              <tr><td>644</td><td><span class="name" data-director="Vicki Huang（黃善羚）" data-secretary="Ching-shang Lin（林景聖）" data-name="Sunny（林宗華）"></span></td><td>sunny</td></tr>
+              <tr><td>645</td><td><span class="name" data-director="Vicki Huang（黃善羚）" data-secretary="Ching-shang Lin（林景聖）" data-name="Anne Liao（廖文淵）"></span></td><td>anneliao1647</td></tr>
+              <tr><td>646</td><td><span class="name" data-director="Vicki Huang（黃善羚）" data-secretary="Ching-shang Lin（林景聖）" data-name="Albert Lin（林秋伯）"></span></td><td>albert1556</td></tr>
+              <tr><td>650</td><td><span class="name" data-director="Vicki Huang（黃善羚）" data-secretary="Ching-shang Lin（林景聖）" data-name="Jessica Chen（陳專卿）"></span></td><td>jessica.chen</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">F1 MIS 資服部（5F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>823</td><td><span class="name" data-director="C.L. Lin（林青龍）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Jason Lin（林智祥）"></span></td><td>jasonlin</td></tr>
+              <tr><td>825</td><td><span class="name" data-director="C.L. Lin（林青龍）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Justin Sung（宋昱霆）"></span></td><td>justin</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">FCS 金融法規報表/反洗錢 技術（4F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>533</td><td><span class="name" data-director="Brett Lee（李耕培）" data-secretary="Amber Liu（劉學佳）" data-name="Brett Lee（李耕培）"></span></td><td>friedberg</td></tr>
+              <tr><td>538</td><td><span class="name" data-director="Brett Lee（李耕培）" data-secretary="Amber Liu（劉學佳）" data-name="Tom Lu（呂宗明）"></span></td><td>tomlu</td></tr>
+              <tr><td>542</td><td><span class="name" data-director="Brett Lee（李耕培）" data-secretary="Amber Liu（劉學佳）" data-name="Hsiu-Jung Yang（楊琇茸）"></span></td><td>sure</td></tr>
+              <tr><td>550</td><td><span class="name" data-director="Brett Lee（李耕培）" data-secretary="Amber Liu（劉學佳）" data-name="Lisa Pai（白美慧）"></span></td><td>lisa.pai</td></tr>
+              <tr><td>686</td><td><span class="name" data-director="Brett Lee（李耕培）" data-secretary="Amber Liu（劉學佳）" data-name="Cindy Ho（何韻儀）"></span></td><td>cindy.ho</td></tr>
+              <tr><td>690</td><td><span class="name" data-director="Brett Lee（李耕培）" data-secretary="Amber Liu（劉學佳）" data-name="Victoria Chueh（闕君涵）"></span></td><td>victoria.chueh</td></tr>
+              <tr><td>691</td><td><span class="name" data-director="Brett Lee（李耕培）" data-secretary="Amber Liu（劉學佳）" data-name="Sunny Kuo（郭姿瑩）"></span></td><td>sunny.kuo</td></tr>
+              <tr><td>692</td><td><span class="name" data-director="Brett Lee（李耕培）" data-secretary="Amber Liu（劉學佳）" data-name="Angela Pan（潘虛廷）"></span></td><td>angela.pan</td></tr>
+              <tr><td>697</td><td><span class="name" data-director="Brett Lee（李耕培）" data-secretary="Amber Liu（劉學佳）" data-name="Evie Huang（黃瑀盈）"></span></td><td>evie.huang</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">FCS1 金融法規報表/反洗錢 業務（3F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>318</td><td><span class="name" data-director="Frank Lin（林聖懿）" data-secretary="Jenny Wang（汪曉芳）" data-name="Tom Hsi（奚碩年）"></span></td><td>tomhsi</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">HCP2 人資系統顧問+技術（4F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td></td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Yoga Hsiao（蕭又嘉）"></span></td><td>yoga.hsiao</td></tr>
+              <tr><td>709</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Miya Wang（王藝郿）"></span></td><td>miya.wang</td></tr>
+              <tr><td>710</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="HB Chen（陳弘彬）"></span></td><td>hb.chen</td></tr>
+              <tr><td>711</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Sean Kuo（郭政憲）"></span></td><td>sean1861</td></tr>
+              <tr><td>712</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Winnie Cheng（程育英）"></span></td><td>winnie.cheng</td></tr>
+              <tr><td>713</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="George Yu（余孝寬）"></span></td><td>george.yu</td></tr>
+              <tr><td>714</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Howard Chou（周子洋）"></span></td><td>howard1837</td></tr>
+              <tr><td>716</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Joy Wu（吳哲毅）"></span></td><td>joywu</td></tr>
+              <tr><td>718</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Renee Chen（陳佩雯）"></span></td><td>renee1681</td></tr>
+              <tr><td>719</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Ken Pan（潘祥民）"></span></td><td>ken.pan</td></tr>
+              <tr><td>720</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Ventie Chou（周文泰）"></span></td><td>ventie1406</td></tr>
+              <tr><td>721</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Jill Fang（方思琦）"></span></td><td><span class="text-info">客服</span> jill1454</td></tr>
+              <tr><td>724</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Jacky Su（蘇建星）"></span></td><td>jacky1650</td></tr>
+              <tr><td>725</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Joie Chen（陳婕瑜）"></span></td><td>joie.chen</td></tr>
+              <tr><td>726</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Dick（廖大慶）"></span></td><td>dick1851</td></tr>
+              <tr><td>727</td><td><span class="name" data-director="Jacky Su（蘇建星）" data-secretary="Jo Hsu（許雯瑜）" data-name="Debbie Wu（吳仁丹）"></span></td><td>debbie1674</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-12 col-md-3">
+        <div class="department border">
+          <div class="border text-center title">M1 行銷部（5F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>380</td><td><span class="name" data-director="Ouying（歐音）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Ting（黃思婷）"></span></td><td>ting1890</td></tr>
+              <tr><td>381</td><td><span class="name" data-director="Carrie Yu（余沁薇）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Carrie Yu（余沁薇）"></span></td><td><span class="text-danger">副總</span> carrie1415</td></tr>
+              <tr><td>382</td><td><span class="name" data-director="Carrie Yu（余沁薇）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Ouying（歐音）"></span></td><td>ouying</td></tr>
+              <tr><td>383</td><td><span class="name" data-director="Ouying（歐音）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Iris Chang（張珮珊）"></span></td><td>iris1858</td></tr>
+              <tr><td>385</td><td><span class="name" data-director="Ouying（歐音）" data-secretary="Vicky Kuo（郭倖妏）" data-name="CJ（陳弘哲）"></span></td><td>cj1895</td></tr>
+              <tr><td>386</td><td><span class="name" data-director="Ouying（歐音）" data-secretary="Vicky Kuo（郭倖妏）" data-name="Clair Chueh（闕念慈）"></span></td><td>clair.chueh</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">R1 研發資安（4F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>760</td><td><span class="name" data-director="Jearen Sun（孫介人）" data-secretary="Jo Hsu（許雯瑜）" data-name="Norman Chen（陳志忠）"></span></td><td>normanchen</td></tr>
+              <tr><td>764</td><td><span class="name" data-director="Jearen Sun（孫介人）" data-secretary="Jo Hsu（許雯瑜）" data-name="Leon Jiang（江良印）"></span></td><td>leonjiang</td></tr>
+              <tr><td>765</td><td><span class="name" data-director="Jearen Sun（孫介人）" data-secretary="Jo Hsu（許雯瑜）" data-name="Tsu-Chi Lo（羅祖祈）"></span></td><td>tsuchi</td></tr>
+              <tr><td>768</td><td><span class="name" data-director="Jearen Sun（孫介人）" data-secretary="Jo Hsu（許雯瑜）" data-name="Jearen Sun（孫介人）"></span></td><td>sun</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">R3 研發SWIFT金融系統（3F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td></td><td><span class="name" data-director="M.H. Lin（林妙鴻）" data-secretary="Monica Huang（黃美女）" data-name="Michelle Lee（李岳樺）"></span></td><td>michelle.lee</td></tr>
+              <tr><td>555</td><td><span class="name" data-director="M.H. Lin（林妙鴻）" data-secretary="Monica Huang（黃美女）" data-name="Daniel（陳俊穎）"></span></td><td>daniel1836</td></tr>
+              <tr><td>556</td><td><span class="name" data-director="M.H. Lin（林妙鴻）" data-secretary="Monica Huang（黃美女）" data-name="Tony Chan（詹森名）"></span></td><td>tonychan</td></tr>
+              <tr><td>570</td><td><span class="name" data-director="M.H. Lin（林妙鴻）" data-secretary="Monica Huang（黃美女）" data-name="M.H. Lin（林妙鴻）"></span></td><td><span class="text-danger">協理</span> miaw</td></tr>
+              <tr><td>572</td><td><span class="name" data-director="M.H. Lin（林妙鴻）" data-secretary="Monica Huang（黃美女）" data-name="Gloria Chen（陳靜如）"></span></td><td>gloria</td></tr>
+              <tr><td>573</td><td><span class="name" data-director="M.H. Lin（林妙鴻）" data-secretary="Monica Huang（黃美女）" data-name="Anna Lee（李淑伶）"></span></td><td>anna</td></tr>
+              <tr><td>574</td><td><span class="name" data-director="M.H. Lin（林妙鴻）" data-secretary="Monica Huang（黃美女）" data-name="Hunter Huang（黃漢棠）"></span></td><td>hunter</td></tr>
+              <tr><td>575</td><td><span class="name" data-director="M.H. Lin（林妙鴻）" data-secretary="Monica Huang（黃美女）" data-name="Simon Wang（王國泰）"></span></td><td>kuotai</td></tr>
+              <tr><td>576</td><td><span class="name" data-director="M.H. Lin（林妙鴻）" data-secretary="Monica Huang（黃美女）" data-name="Allen Huang（黃偉倫）"></span></td><td>allen1412</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">R4 研發金融系統（5F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>566</td><td><span class="name" data-director="Zheng Hui（陳正暉）" data-secretary="Monica Huang（黃美女）" data-name="Zheng Hui（陳正暉）"></span></td><td>zhenghui1804</td></tr>
+              <tr><td>569</td><td><span class="name" data-director="Zheng Hui（陳正暉）" data-secretary="Monica Huang（黃美女）" data-name="Ray（盧叡）"></span></td><td>ray1839</td></tr>
+              <tr><td>662</td><td><span class="name" data-director="Zheng Hui（陳正暉）" data-secretary="Monica Huang（黃美女）" data-name="Weng Wei-Hsiang（翁煒翔）"></span></td><td>weng1877</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">SS1 政府/人資/資安 業務（4F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td></td><td><span class="name" data-director="Chun-hsiao Huang（黃峻嘯）" data-secretary="Fanny Lin（林美玉）" data-name="Sherry-Hsiao（蕭佩宸）"></span></td><td>sherry.hsiao</td></tr>
+              <tr><td>701</td><td><span class="name" data-director="Chun-hsiao Huang（黃峻嘯）" data-secretary="Fanny Lin（林美玉）" data-name="Chun-hsiao Huang（黃峻嘯）"></span></td><td><span class="text-danger">副總</span> huang140</td></tr>
+              <tr><td>703</td><td><span class="name" data-director="Chun-hsiao Huang（黃峻嘯）" data-secretary="Fanny Lin（林美玉）" data-name="Joy Lai（賴名儀）"></span></td><td>joy1602</td></tr>
+              <tr><td>704</td><td><span class="name" data-director="Chun-hsiao Huang（黃峻嘯）" data-secretary="Fanny Lin（林美玉）" data-name="Kevin Hsu（徐康正）"></span></td><td>kevinhsu1414</td></tr>
+              <tr><td>705</td><td><span class="name" data-director="Chun-hsiao Huang（黃峻嘯）" data-secretary="Fanny Lin（林美玉）" data-name="Vita Liao（廖婉孜）"></span></td><td>vita</td></tr>
+              <tr><td>706</td><td><span class="name" data-director="Chun-hsiao Huang（黃峻嘯）" data-secretary="Fanny Lin（林美玉）" data-name="Fanny Lin（林美玉）"></span></td><td>fanny</td></tr>
+              <tr><td>707</td><td><span class="name" data-director="Chun-hsiao Huang（黃峻嘯）" data-secretary="Fanny Lin（林美玉）" data-name="Nick Kuo（郭為國）"></span></td><td>nick1790</td></tr>
+              <tr><td>708</td><td><span class="name" data-director="Chun-hsiao Huang（黃峻嘯）" data-secretary="Fanny Lin（林美玉）" data-name="Stacy（陳嬿如）"></span></td><td>stacy1866</td></tr>
+              <tr><td>787</td><td><span class="name" data-director="Chun-hsiao Huang（黃峻嘯）" data-secretary="Fanny Lin（林美玉）" data-name="Daphne Tsai（蔡瑀安）"></span></td><td>daphne1807</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">T1 銀行金融技術（3F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>517</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Jethay（何仁鈞）"></span></td><td>jethay1547</td></tr>
+              <tr><td>521</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Monica Huang（黃美女）"></span></td><td>monica</td></tr>
+              <tr><td>522</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Shiu-Chuan Huang（黃秀鵑）"></span></td><td>gwen</td></tr>
+              <tr><td>523</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Gladys Chen（陳美芳）"></span></td><td>gladys</td></tr>
+              <tr><td>524</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Amber Liu（劉學佳）"></span></td><td>amber</td></tr>
+              <tr><td>525</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="D.J. Lee（李德章）"></span></td><td>ldj</td></tr>
+              <tr><td>526</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Kevin Tsao（曹文亮）"></span></td><td>liang1798</td></tr>
+              <tr><td>528</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="S.J Pan（潘士鈞）"></span></td><td>dale</td></tr>
+              <tr><td>529</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Jason（陳一杰）"></span></td><td>jason1476</td></tr>
+              <tr><td>530</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Jacky Chiu（邱柏瑋）"></span></td><td>jacky.chiu</td></tr>
+              <tr><td>532</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Sally Lin（林宜璇）"></span></td><td>sally.lin</td></tr>
+              <tr><td>534</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Boyle Du（杜博于）"></span></td><td>boyle.du</td></tr>
+              <tr><td>535</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Helios Shr（施銘韋）"></span></td><td><span class="text-danger">協理</span> heliosshr</td></tr>
+              <tr><td>536</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Kris Jiang（江凌）"></span></td><td>kris.jiang</td></tr>
+              <tr><td>537</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Tomas Huang（黃辛鉉）"></span></td><td>tomas1477</td></tr>
+              <tr><td>540</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Alex Chen（陳昱廷）"></span></td><td>alex.chen</td></tr>
+              <tr><td>541</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Dennis（方建嵐）"></span></td><td>dennis1489</td></tr>
+              <tr><td>543</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Tommy Lin（林韜宇）"></span></td><td>tommy.lin</td></tr>
+              <tr><td>544</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Rebecca（林玉倫）"></span></td><td>rebecca1506</td></tr>
+              <tr><td>545</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Mia Hsieh（謝孟亞）"></span></td><td>mia.hsieh</td></tr>
+              <tr><td>546</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Jesse Hsu（許展維）"></span></td><td>jesse1773</td></tr>
+              <tr><td>547</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Tim Chao（趙允笙）"></span></td><td>ushung</td></tr>
+              <tr><td>548</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="HuaiShao Chang（張懷少）"></span></td><td>huaishao.chang</td></tr>
+              <tr><td>549</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Maia Chan（詹秀瑩）"></span></td><td>maiachan</td></tr>
+              <tr><td>551</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Adolph Wu（吳玄裕）"></span></td><td>adolph1753</td></tr>
+              <tr><td>553</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Cathy Lin（林雅萍）"></span></td><td>cathylin</td></tr>
+              <tr><td>554</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Shua Hsu（許書華）"></span></td><td>shua.hsu</td></tr>
+              <tr><td>557</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Paisin Lee（李佩芯）"></span></td><td>prym</td></tr>
+              <tr><td>558</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Tony（李邵卿）"></span></td><td>tony1795</td></tr>
+              <tr><td>559</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Jack Lin（林柏材）"></span></td><td>jack1729</td></tr>
+              <tr><td>560</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Yushan Liu（劉玉山）"></span></td><td>yushanliu</td></tr>
+              <tr><td>561</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Tina（葉亞婷）"></span></td><td>tina1880</td></tr>
+              <tr><td>562</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Yutai（吳宇泰）"></span></td><td>yutai</td></tr>
+              <tr><td>563</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Chris Huang（黃兆乾）"></span></td><td>chris1793</td></tr>
+              <tr><td>564</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Johnny Pan（潘建江）"></span></td><td>pgj</td></tr>
+              <tr><td>565</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Ryan Wang（王至正）"></span></td><td>ccw</td></tr>
+              <tr><td>567</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Huang Wei Tsai（蔡宏偉）"></span></td><td>huangwei.tsai</td></tr>
+              <tr><td>568</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Bethany Hung（洪嬿婷）"></span></td><td>bethany.hung</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <!-- <div class="border text-center title">HCP2（4F）</div> -->
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>580</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Paul（何木榮）"></span></td><td>paul1809</td></tr>
+              <tr><td>582</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Eason（郭嘉遠）"></span></td><td>eason1820</td></tr>
+              <tr><td>583</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Angus Hsieh（謝偉慈）"></span></td><td>angus1865</td></tr>
+              <tr><td>584</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Haw Chyun Chou（周皓群）"></span></td><td>hcc1519</td></tr>
+              <tr><td>585</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Justin Chang（張元豪）"></span></td><td>yuanhao1747</td></tr>
+              <tr><td>586</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Allison Chi（紀思妤）"></span></td><td>allison.chi</td></tr>
+              <tr><td>588</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Stella（鐘心伶）"></span></td><td>stella1741</td></tr>
+              <tr><td>589</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Vicky Ke（柯毓亭）"></span></td><td>vicky.ke</td></tr>
+              <tr><td>590</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Elle（李婕瀅）"></span></td><td>elle1788</td></tr>
+              <tr><td>591</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Spencer（連彥維）"></span></td><td>spencer1855</td></tr>
+              <tr><td>592</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Crane Yeh（葉俐妘）"></span></td><td>crane.yeh</td></tr>
+              <tr><td>593</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Daniel（曹家豪）"></span></td><td>daniel1879</td></tr>
+              <tr><td>594</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Percy Lee（李國煒）"></span></td><td>percylee</td></tr>
+              <tr><td>681</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Roger Wang（王兆平）"></span></td><td>roger.wang</td></tr>
+              <tr><td>683</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Hank Chen（陳日宗）"></span></td><td>hank.chen</td></tr>
+              <tr><td>684</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="John Tsai（蔡翰毅）"></span></td><td>john.tsai</td></tr>
+              <tr><td>685</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Dexter Tu（杜重偉）"></span></td><td>dexter.tu</td></tr>
+              <tr><td>688</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Kenny Chiu（邱永銓）"></span></td><td>kenny.chiu</td></tr>
+              <tr><td>694</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Lumia Chen（陳柔妤）"></span></td><td>lumia.chen</td></tr>
+              <tr><td>695</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Abigail Huang（黃宇慧）"></span></td><td>abigail.huang</td></tr>
+              <tr><td>696</td><td><span class="name" data-director="Helios Shr（施銘韋）" data-secretary="Monica Huang（黃美女）" data-name="Yan Jyun Lin（林雁珺）"></span></td><td>yanjyun.lin</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">T20 政府（4F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>700</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Roger Sung（宋祥榮）"></span></td><td><span class="text-danger">副總</span> roger</td></tr>
+              <tr><td>757</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Jo Hsu（許雯瑜）"></span></td><td>jo</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">T21（立法院）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>790</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Chin-Ching Lien（連晉慶）"></span></td><td>jinchin</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">T22 政府（4F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>771</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Kevin Lin（林柏諺）"></span></td><td>poyen1833</td></tr>
+              <tr><td>774</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Ken Fan（范揚政）"></span></td><td>kenfan</td></tr>
+              <tr><td>776</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Sing-Chen Yao（姚星辰）"></span></td><td>star1838</td></tr>
+              <tr><td>777</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Sendy Lin（林萩菁）"></span></td><td>sendy1551</td></tr>
+              <tr><td>789</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Danny Tseng（鄭銘輝）"></span></td><td>jmh273</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">T23 衛服部/食藥署（4F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>738</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Reinhold（王勁勛）"></span></td><td>reinhold1862</td></tr>
+              <tr><td>740</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Henry Ho（何奇）"></span></td><td>henryho</td></tr>
+              <tr><td>746</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Jeen-Ming Lau（勞振明）"></span></td><td>lau-jeen-ming</td></tr>
+              <tr><td>766</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Michael Hwang（黃景祥）"></span></td><td>michael</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">T24 政府（4F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>728</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Albert Hung（洪緯洲）"></span></td><td>alberthung</td></tr>
+              <tr><td>729</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Jack Lin（林發祥）"></span></td><td>fahsiang</td></tr>
+              <tr><td>731</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="K.H. Chen（陳光宏）"></span></td><td>ckh</td></tr>
+              <tr><td>732</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Shelly Ke（柯佩儀）"></span></td><td>shelly1560</td></tr>
+              <tr><td>733</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="David Tsai（蔡尚明）"></span></td><td>david</td></tr>
+              <tr><td>736</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Aaron Lu（呂建德）"></span></td><td>aaron1457</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">T25 ARES PP文件加密技術（4F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>781</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Ariel Lin（林品萱）"></span></td><td>ariel.lin</td></tr>
+              <tr><td>784</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="James Ju（朱峰詰）"></span></td><td>jamesju</td></tr>
+              <tr><td>785</td><td><span class="name" data-director="Roger Sung（宋祥榮）" data-secretary="Jo Hsu（許雯瑜）" data-name="Jack Huang（黃嘉傑）"></span></td><td>jack1418</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">T5 電子發票技術（5F）</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>600</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="Chien-Hung Wu（吳建宏）"></span></td><td><span class="text-danger">協理</span> wch</td></tr>
+              <tr><td>601</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="Jumbo Jiang（江博文）"></span></td><td>jumbo</td></tr>
+              <tr><td>607</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="Wisdom Chang（張世璿）"></span></td><td>wisdom</td></tr>
+              <tr><td>608</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="Howard（林志鴻）"></span></td><td>howard1867</td></tr>
+              <tr><td>609</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="Danny Chen（陳澤元）"></span></td><td>danny1682</td></tr>
+              <tr><td>612</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="Ching-shang Lin（林景聖）"></span></td><td>cs.lin</td></tr>
+              <tr><td>613</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="Cora You（游雅雯）"></span></td><td>cora1645</td></tr>
+              <tr><td>614</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="Melody Lee（李品萱）"></span></td><td>melody.lee</td></tr>
+              <tr><td>615</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="Angela Lin（林佳瑩）"></span></td><td>angela</td></tr>
+              <tr><td>616</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="Kent Wang（王柏凱）"></span></td><td>kent.wang</td></tr>
+              <tr><td>617</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="Min Ru Hsieh（謝旻汝）"></span></td><td>amin731</td></tr>
+              <tr><td>618</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="MingYi Wang（王明夷）"></span></td><td>mingyi</td></tr>
+              <tr><td>834</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="Su-Hui Chang（張素惠）"></span></td><td>suhuichang</td></tr>
+              <tr><td>850</td><td><span class="name" data-director="Chien-Hung Wu（吳建宏）" data-secretary="Ching-shang Lin（林景聖）" data-name="Webster Hsieh（謝偉寶）"></span></td><td>webster</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="border">
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>211</td><td>3樓接待區（雜誌區）</td></tr>
+              <tr><td>212</td><td>3樓接待區（獎杯櫃）</td></tr>
+              <tr><td>215</td><td>3樓影印室</td></tr>
+              <tr><td>217</td><td>3樓系統部會議室</td></tr>
+              <tr><td>218</td><td>3樓業務部會議室</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="border">
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>890</td><td>4樓接待區</td></tr>
+              <tr><td>891</td><td>4樓第一會議室</td></tr>
+              <tr><td>892</td><td>4樓第二會議室</td></tr>
+              <tr><td>893</td><td>4樓第三會議室</td></tr>
+              <tr><td>894</td><td>4樓影印室</td></tr>
+              <tr><td>895</td><td>4數機房</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="border">
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>882</td><td>5樓接待區</td></tr>
+              <tr><td>883</td><td>5樓第二會議室</td></tr>
+              <tr><td>884</td><td>5樓第四會議室</td></tr>
+              <tr><td>885</td><td>5樓第三會議室</td></tr>
+              <tr><td>886</td><td>5樓第二會議室</td></tr>
+              <tr><td>887</td><td>5樓影印室</td></tr>
+              <tr><td>888</td><td>5樓維修室</td></tr>
+              <tr><td>889</td><td>5樓第一會議室</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container-fluid" style="max-width: 1280px;">
+    <div class="row no-gutters">
+      <div class="col-12 col-md-4">
+        <div class="department border">
+          <div class="border text-center title">CMS1 ciMes製造系統/業務 <span class="text-danger">(新竹MES-11131)</span></div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>714</td><td><span class="name" data-director="Jacky Tseng（曾文光）" data-secretary="Daphne Lu（盧姵丞）" data-name="Daphne Lu（盧姵丞）"></span></td><td>daphnelu</td></tr>
+              <tr><td>721</td><td><span class="name" data-director="Jacky Tseng（曾文光）" data-secretary="Daphne Lu（盧姵丞）" data-name="Roger Pan（潘宣瑾）"></span></td><td>roger.pan</td></tr>
+              <tr><td>724</td><td><span class="name" data-director="Jacky Tseng（曾文光）" data-secretary="Daphne Lu（盧姵丞）" data-name="Jacky Tseng（曾文光）"></span></td><td><span class="text-danger">協理</span> jacky1423</td></tr>
+              <tr><td>725</td><td><span class="name" data-director="Jacky Tseng（曾文光）" data-secretary="Daphne Lu（盧姵丞）" data-name="Vicky Pan（潘貞岑）"></span></td><td>vicky1615</td></tr>
+              <tr><td>726</td><td><span class="name" data-director="Jacky Tseng（曾文光）" data-secretary="Daphne Lu（盧姵丞）" data-name="News Liang（梁馨文）"></span></td><td>news1904</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">E6 人力委外部門 新竹</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td></td><td><span class="name" data-director="Celeste Huang（黃瓊玉）" data-secretary="Daphne Lu（盧姵丞）" data-name="Ying Huang（黃美櫻）"></span></td><td>ying1535</td></tr>
+              <tr><td></td><td><span class="name" data-director="Celeste Huang（黃瓊玉）" data-secretary="Daphne Lu（盧姵丞）" data-name="James Hrong（洪健鈞）"></span></td><td>h1813</td></tr>
+              <tr><td></td><td><span class="name" data-director="Celeste Huang（黃瓊玉）" data-secretary="Daphne Lu（盧姵丞）" data-name="James Liao（廖宜達）"></span></td><td>itliao</td></tr>
+              <tr><td></td><td><span class="name" data-director="Celeste Huang（黃瓊玉）" data-secretary="Daphne Lu（盧姵丞）" data-name="Adolph Chang（張志安）"></span></td><td>adolph</td></tr>
+              <tr><td></td><td><span class="name" data-director="Celeste Huang（黃瓊玉）" data-secretary="Daphne Lu（盧姵丞）" data-name="Elsa Yang（楊幸兒）"></span></td><td>elsa</td></tr>
+              <tr><td></td><td><span class="name" data-director="Celeste Huang（黃瓊玉）" data-secretary="Daphne Lu（盧姵丞）" data-name="Jerry Chang（張文彬）"></span></td><td>jerrychang</td></tr>
+              <tr><td></td><td><span class="name" data-director="Celeste Huang（黃瓊玉）" data-secretary="Daphne Lu（盧姵丞）" data-name="Jason Su（蘇明展）"></span></td><td>jasonsu</td></tr>
+              <tr><td>707</td><td><span class="name" data-director="Celeste Huang（黃瓊玉）" data-secretary="Daphne Lu（盧姵丞）" data-name="Celeste Huang（黃瓊玉）"></span></td><td>cyhuang</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">H21 ciMes製造系統/技術 新竹</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td></td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Warren（謝文昌）"></span></td><td><span class="text-danger">633</span> warren1679</td></tr>
+              <tr><td></td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Joe Chen（陳俊宇）"></span></td><td>joe.chen</td></tr>
+              <tr><td></td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Jimmy Ho（何家名）"></span></td><td><span class="text-danger">642</span> jimmy.ho</td></tr>
+              <tr><td>711</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Ivy（邱秀玲）"></span></td><td>ivy1878</td></tr>
+              <tr><td>719</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Carol Chou（鄒秋明）"></span></td><td>carol</td></tr>
+              <tr><td>720</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Terry Huang（黃文龍）"></span></td><td><span class="text-danger">649</span> terry1472</td></tr>
+              <tr><td>734</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="J.H. Wang（王俊弘）"></span></td><td>junhong</td></tr>
+              <tr><td>735</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Albert Hsu（許澤安）"></span></td><td>alberthsu</td></tr>
+              <tr><td>747</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Laura Lin（林幸儀）"></span></td><td>laura1676</td></tr>
+              <tr><td>752</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Ted Chen（陳敬翔）"></span></td><td>ted.chen</td></tr>
+              <tr><td>755</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Zell Chen（陳芝傑）"></span></td><td>zell.chen</td></tr>
+              <tr><td>757</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Lance Chang（張基進）"></span></td><td>lance1654</td></tr>
+              <tr><td>758</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Archie（沈政德）"></span></td><td>archie1874</td></tr>
+              <tr><td>759</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="JJ Yeh（葉菁菁）"></span></td><td>jj.yeh</td></tr>
+              <tr><td>760</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Y.P. Hsu（徐雅萍）"></span></td><td>yphsu</td></tr>
+              <tr><td>761</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="James Wang（王永正）"></span></td><td>jameswang</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="department border">
+          <!-- <div class="border text-center title">H21 ciMes製造系統/技術</div> -->
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>763</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Ting Yu Chen（陳亭宇）"></span></td><td>tingyu.chen</td></tr>
+              <tr><td>764</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Ivan Wang（王繼興）"></span></td><td>ivanwang</td></tr>
+              <tr><td>765</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Nick You（游經輝）"></span></td><td>nick1670</td></tr>
+              <tr><td>766</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Edison Jian（江秉原）"></span></td><td>edison1582</td></tr>
+              <tr><td>767</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Jerome Chen（陳哲豪）"></span></td><td>chen1742</td></tr>
+              <tr><td>768</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Cheer Huang（黃春風）"></span></td><td>cheer1606</td></tr>
+              <tr><td>769</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Jennifer Liang（梁櫻鏵）"></span></td><td>jennifer1646</td></tr>
+              <tr><td>772</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Kevin Ning（甯怡彰）"></span></td><td><span class="text-danger">協理</span> ycning</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">HCP2 人資部門技術 新竹</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>709</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Eddie Chen（陳永聖）"></span></td><td>eddiechen1463</td></tr>
+              <tr><td>712</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Todd Wu（吳蓬益）"></span></td><td>toddwu</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">SS1 人力委外業務 新竹</div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td>716</td><td><span class="name" data-director="Kevin Ning（甯怡彰）" data-secretary="Daphne Lu（盧姵丞）" data-name="Kelly Huang（黃語柔）"></span></td><td>kelly1400</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="department border">
+          <div class="border text-center title">U2 台中技術/秘書曉芳姊 <span class="text-danger">(11141)</span></div>
+          <table class="table table-sm">
+            <tbody>
+              <tr><td></td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Wallis Li（李思穎）"></span></td><td>wallis.li</td></tr>
+              <tr><td></td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Jenny Wang（王惠伶）"></span></td><td>jenny.wang</td></tr>
+              <tr><td></td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Sani Wu（吳怡靜）"></span></td><td>sani.wu</td></tr>
+              <tr><td></td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Renee Li（李悅嘉）"></span></td><td>renee.li</td></tr>
+              <tr><td></td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Angel Chen（陳柏媛）"></span></td><td>angel.chen</td></tr>
+              <tr><td></td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Amy Wang（王美琪）"></span></td><td>amy.wang</td></tr>
+              <tr><td>612</td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Jason（蔡振耀）"></span></td><td>jason1845</td></tr>
+              <tr><td>613</td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Mikk（陳仁專）"></span></td><td>mikk1842</td></tr>
+              <tr><td>623</td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Andrew Wu（吳棟澤）"></span></td><td>andrewwu</td></tr>
+              <tr><td>630</td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Charlie（花正中）"></span></td><td>charlie1640</td></tr>
+              <tr><td>632</td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Eric（吳x瑋）"></span></td><td>eric1636</td></tr>
+              <tr><td>633</td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Joanne Chen（陳慧玲）"></span></td><td>joanne</td></tr>
+              <tr><td>651</td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Luther Lin（林良達）"></span></td><td>lutherlin</td></tr>
+              <tr><td>652</td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Essene Lin（林明輝）"></span></td><td>essenelin</td></tr>
+              <tr><td>655</td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Neil Chen（陳建祥）"></span></td><td>nelichen</td></tr>
+              <tr><td>660</td><td><span class="name" data-director="Pony Femg（馮羿銘）" data-secretary="Jenny Wang（汪曉芳）" data-name="Pony Femg（馮羿銘）"></span></td><td>pony</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+$('.name').each(function(v,i){
+  let name = $(this).data('name');
+  $(this).text(name);
+});
+$(document).on('click','.name',function(){
+  $('.name.director').removeClass('director');
+  $('.name.secretary').removeClass('secretary');
+  $('tr.active').removeClass('active');
+  let $this=$(this);
+  $this.closest('tr').addClass('active');
+  var directorArr =$this.data('director').split(",");
+  var secretaryArr =$this.data('secretary').split(",");
+  directorArr.forEach(function(val,index){
+    $(".name[data-name='" + val + "']").addClass('director');
+  });
+  secretaryArr.forEach(function(val,index){
+    $(".name[data-name='" + val + "']").addClass('secretary');
+  });
+});
+</script>
+</body>
+</html>

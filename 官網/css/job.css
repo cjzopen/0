@@ -1,0 +1,33 @@
+#years{
+  margin-top: 2rem;
+  width: 100%;
+  justify-content: space-between;
+  padding: .25rem .5rem;
+  background-color: #f79523;
+  background-image: linear-gradient(90deg, #f79523, #2858aa);
+  color: #fff;
+}
+#years li{
+  padding: .25rem;
+}
+#years a:hover{
+  color: inherit;
+  mix-blend-mode: overlay
+}
+#news time{white-space: nowrap}
+#news li+li{border-top:1px dotted #bcbcbc}
+
+.job-bg{
+  /* background-size: contain; */
+  background-position: top center;
+  background-color: #4f4c4c;
+}
+
+@media (min-width: 900px) {
+  #years{
+    display: flex;
+  }
+  .job-bg{
+    background-size: cover;
+  }
+}

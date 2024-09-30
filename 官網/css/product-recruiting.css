@@ -1,0 +1,101 @@
+main{
+  --color-blue:#6657EF;
+  --color-gray:#F4F4F4;
+  --gauge-circle-size:210px;
+  --gauge-circle-color:#6657EF;
+  --score-container-padding: 4px;
+}
+main h1,main .h1{
+  font-size: 44px;
+}
+.color-blue{
+  color:var(--color-blue,#2858aa)!important;
+}
+.bg-blue{
+  background-color: var(--color-blue, #2858aa)!important;
+}
+main.bg-gray{
+  background-color: var(--color-gray, #ebebeb)!important;
+}
+#main-header{
+  padding-top: 3rem;
+  padding-bottom: 3.75rem;
+}
+#advantage,#case{
+  background-color: #EBF3FF;
+}
+#case{
+  background-image: linear-gradient(135deg, #fff, #EBF3FF);
+}
+.swiper-slide img{
+  width: auto;
+}
+#percentage>:not(:last-child){
+  margin-bottom:24px;
+}
+.lh-score__gauge {
+  width: auto;
+  margin: 0px auto;
+}
+.lh-gauge__wrapper, .lh-fraction__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: var(--score-container-padding);
+  contain: content;
+  color: var(--gauge-circle-color);
+  fill: transparent;
+  stroke: var(--gauge-circle-color);
+  will-change: opacity;
+}
+.lh-gauge__svg-wrapper {
+  position: relative;
+  height: var(--gauge-circle-size);
+}
+.lh-gauge {
+  stroke-linecap: round;
+  width: var(--gauge-circle-size);
+  height: var(--gauge-circle-size);
+}
+.lh-gauge-base {
+  opacity: 0.1;
+}
+.lh-gauge-arc {
+  fill: none;
+  transform-origin: 50% 50%;
+  animation: load-gauge 1s ease forwards;
+  animation-delay: 250ms;
+}
+.lh-gauge__percentage {
+  width: 100%;
+  height: var(--gauge-circle-size);
+  position: absolute;
+  line-height: 0;
+  text-align: center;
+  top: calc(var(--score-container-padding) + (var(--gauge-circle-size) / 2) - 10px);
+  font-size: calc(var(--gauge-circle-size) * 0.1 + 8px);
+  & .color-black{
+    font-size: calc(var(--gauge-circle-size) * 0.1);
+  }
+  & .font-weight-bold{
+    padding-top: calc(1.5rem + var(--score-container-padding));
+  }
+}
+@keyframes load-gauge {
+  from {stroke-dasharray: 0 352;}
+}
+@media (min-width:768px){
+  #main-header{
+    clip-path: ellipse(100% 100% at 50% 0%);
+  }
+  #advantage{
+    clip-path: ellipse(100% 67% at 50% 67%);
+  }
+  #case>.image{
+    background-image: url('/img/product/e-recruiting/circle-1.png'), url('/img/product/e-recruiting/circle-2.png');
+    background-repeat: no-repeat;
+    background-size: 450px 360px, 250px 500px;
+    background-position: left bottom, right bottom;
+  }
+}

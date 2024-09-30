@@ -1,0 +1,202 @@
+#article{
+  color:#455;
+}
+.floatLeft{
+  float: left;
+}
+.floatRight{
+  float: right;
+}
+.floatLeft::after,
+.floatRight::after{
+  content:"";
+  clear:both;
+}
+h2,h3{
+  color:#2f61b5;
+}
+h1 {
+  font-size: 1.75rem
+}
+h2 {
+  font-size: 1.5rem
+}
+h3{
+  font-size: 1.25rem
+}
+h4{
+  font-size: 1.1rem;
+}
+h5{
+  font-size: 1rem;
+}
+#article a:not(.frame),.relateArticle a {
+  box-shadow: 0 -1px 0 #2f61b5 inset;
+  transition: box-shadow .2s ease-in-out
+}
+#article a:not(.frame):hover,.relateArticle a:hover {
+  box-shadow: 0 -1px 0 rgba(0,0,0,0) inset,0 3px 0 #2f61b5;
+  transition: box-shadow .2s ease-in-out
+}
+
+
+#article figure {
+  margin-top: 20px;
+  margin-bottom: 10px
+}
+
+
+#article figcaption {
+  display: block;
+  max-width: 84%;
+  font-size: 87%;
+  color: #1A5FA0;
+  margin-top: .6rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.quotes::before,.quotes::after {
+  color: #70b2df;
+  quotes: "\201C" "\201E";
+  font-family: 'Lucida Console';
+  font-size: 2.5rem
+}
+
+.quotes::before {
+  content: open-quote
+}
+
+.quotes::after {
+  content: close-quote
+}
+
+[data-quotes] {
+  padding: 1rem
+}
+
+[data-quotes="1"] .quotes {
+  color: #eb6a31;
+  font-size: 1.5rem
+}
+
+[data-quotes="1"] .quotes::before,[data-quotes="1"] .quotes::after {
+  color: #58b6c4
+}
+
+summary {
+  color: #2f61b5;
+  font-size: 110%;
+  cursor: pointer
+}
+
+summary:focus {
+  outline: none
+}
+
+.relateArticle a {
+  white-space: pre-wrap;
+  -ms-word-break: break-all;
+  -webkit-word-break: break-all;
+  word-break: break-all;
+  overflow-wrap: break-word
+}
+
+#faq-area .qa {
+  padding: 2.5rem;
+  border-left: 3px solid #2f61b5;
+  box-shadow: 0 0 2px #ccc;
+  margin: 1rem 0
+}
+
+#faq-area .name {
+  font-size: 1.25rem;
+  font-weight: 700
+}
+abbr[title]{color:#2f61b5;text-decoration:none}
+.abbr-toggle{
+  margin: 0 2px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+  position: relative;
+  top: -1px;
+}
+.abbr-toggle::before,.abbr-toggle::after{
+  content: "";
+  background-color:#2f61b5;
+  width: 2px;
+  height: 5px;
+  top: 5px;
+  display: block;
+  position: absolute;
+}
+.abbr-toggle::before{
+  transform: rotate(-45deg);
+  left: 5px;
+}
+.abbr-toggle::after {
+  transform: rotate(45deg);
+  right:5px;
+}
+.abbr-content{display:none;padding:1.5rem 1rem;border:1px solid #2f61b5;border-width:1px 0;margin-bottom:1rem;color:#334}
+
+.summary {
+  background-color: #f7f7f7;
+  position: relative;
+  margin-top: 1rem;
+  padding: 1.25rem 1.25rem 3rem;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5
+}
+
+.summary:before {
+  content: '三十秒看問題';
+  color: #f9f9f9;
+  background-color: #0b7d79;
+  padding: .25rem .5rem;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  mix-blend-mode: multiply
+}
+
+.summary>br {
+  display: none
+}
+
+.summary p {
+  margin-top: 0
+}
+
+.summary li {
+  margin-top: 4px
+}
+
+.summary b,.summary strong{display:block;font-weight:400;font-size:1.125rem;color:#0b7d79;margin:2.5rem 0 .5rem}
+#article ul{
+  list-style: disc;
+}
+#article ol{
+  list-style: decimal;
+}
+#article .unstyle{
+  list-style: none;
+}
+@media (max-width: 36rem) {
+  .frame img {
+    max-width:100%
+  }
+
+  .slider {
+    display: none
+  }
+}

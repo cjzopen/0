@@ -1,0 +1,21 @@
+.gsc-tabsArea>div{overflow:unset!important;}
+.gsc-adBlock,.ad{display:none!important;}
+main .gsc-control-cse .gsc-table-result,.cse .gsc-control-cse,main .gsc-control-cse{
+  font-family: "Noto Sans TC", "Microsoft JhengHei", 微軟正黑體, "Roboto Condensed", "Helvetica Neue", sans-serif;
+}
+.cse .gsc-results .gsc-cursor-page.gsc-cursor-current-page, .gsc-results .gsc-cursor-page.gsc-cursor-current-page{
+  text-shadow:none;
+}
+main .gsc-search-button,main #gsc-i-id1{
+  height: 3rem;
+}
+main .gsc-results .gsc-cursor-box .gsc-cursor-current-page{
+  background-color:transparent;
+}
+section{
+  min-height: 66vh;
+  line-height:1;
+}
+.gsc-search-box{
+  line-height:1.7;
+}

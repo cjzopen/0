@@ -1,0 +1,1 @@
+document.getElementById("swiper-js").addEventListener("load",function(){var e=!0;$(window).scroll(function(){$(window).scrollTop()+123>=$("#mobile-app").offset().top&&e&&(e=!1,$.ajax({type:"GET",url:"/template/mobile-app.php",dataType:"html"}).done(function(e){$("#ajax-before").remove(),$("#mobile-app #get-ajax").append(e)}))})});

@@ -1,0 +1,28 @@
+body {
+	font-family: "Microsoft Jhenghei", sans-serif;
+	font-size: 16px;
+	}
+	
+.wrap {
+	max-width: 50em;
+	margin: 0.5em auto;
+	}
+
+header img { width: 100%; }
+
+a img { border: none; }
+
+footer {
+	height: 4.625em;
+	line-height: 4.625;
+	text-align: center;
+	color: #FFF;
+	background-color: #646464;
+	}
+
+.clearFix:before, .clearFix:after {
+	content: "";
+	display: table;
+	}
+.clearFix:after { clear: both; }
+.clearFix { zoom: 1; }

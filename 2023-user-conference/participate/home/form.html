@@ -1,0 +1,87 @@
+
+        <fieldset>
+            <!-- <legend>報名資訊</legend> -->
+            <div class="form-group">
+                <label for="name" class="col-sm-3 control-label">姓名</label>
+                <p class="col-sm-7">
+                    <input type="text" name="name" class="form-control" required />
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="company" class="col-sm-3 control-label">公司名稱</label>
+                <p class="col-sm-7">
+                    <input type="text" name="company" class="form-control" required />
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="dept" class="col-sm-3 control-label">部門</label>
+                <p class="col-sm-7">
+                    <input type="text" name="dept" class="form-control" required />
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="title" class="col-sm-3 control-label">職稱</label>
+                <p class="col-sm-7">
+                    <input type="text" name="title" class="form-control" required />
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="col-sm-3 control-label">聯絡電話</label>
+                <p class="col-sm-5">
+                    <input type="tel" name="phone" class="form-control" placeholder="公司：02-2522-1351" required />
+                </p>
+                <p class="col-sm-2">
+                    <input type="tel" name="ext" class="form-control" placeholder="＃分機"/> 
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="col-sm-3 control-label">手機號碼</label>
+                <p class="col-sm-7">
+                    <input type="tel" name="mobile" class="form-control" placeholder="手機：0912-345678" />
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">聯絡信箱</label>
+                <p class="col-sm-7">
+                    <input type="email" name="email" class="form-control" required />
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="isVeg" class="col-sm-3 control-label">用餐方式</label>
+                <p class="col-sm-7">
+                    <input type="radio" name="isVeg" value="葷食" /> 葷食 &nbsp;
+                    <input type="radio" name="isVeg" value="素食" /> 素食 &nbsp;
+                    <input type="radio" name="isVeg" value="不用餐" /> 不用餐
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="ps" class="col-sm-3 control-label">備註</label>
+                <p class="col-sm-7">
+                    <input type="text" name="ps" class="form-control" />
+                </p>
+            </div>
+        </fieldset>
+
+        
+
+        <fieldset>
+            <legend></legend>
+            <div id="agreeToTerms" class="form-group">
+                <div class="col-sm-12 text-center">
+                    <div class="checkbox">
+                        <label for="agreeToTerms">
+                            <input type="checkbox" name="agreeToTerms" required />
+                             我已詳閱並同意<a href="home/terms.html">資通電腦隱私權聲明</a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12 text-center">
+                    <!--<button type="submit" class="btn btn-primary btn-lg">-->
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <span class="glyphicon glyphicon-ok"></span> 確定報名
+                    </button>
+                </div>
+            </div>
+        </fieldset>

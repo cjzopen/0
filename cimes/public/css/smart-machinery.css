@@ -1,0 +1,18 @@
+.light-blue-bg{
+  background-color: #C6E5F2
+}
+.circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 102px;
+  height: 102px;
+  border-radius: 50%;
+}
+#bg{
+  background-image: url(/public/img/smart-machinery/bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+.slider{padding-top:calc(20 / 72 * 100%)}

@@ -1,0 +1,10 @@
+.border{
+  border-color: #2858aa;
+  padding: 6px;
+  margin: 0;
+}
+.arrow{
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+}

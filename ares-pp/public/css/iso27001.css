@@ -1,0 +1,4 @@
+.bg-lazyload{background-color:#153889}
+section h3{
+  clip-path: polygon(0 3%, 85% 0%, 100% 100%, 0% 100%);
+}

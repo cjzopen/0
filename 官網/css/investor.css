@@ -1,0 +1,70 @@
+section table td,section table th{padding:0.5rem;}
+#investor-list{padding-top:3rem;}
+#investor-list>ul{position:sticky;top:5.5rem;}
+#investor-list ul>li>i{position:relative;left:-.5rem;}
+#investor-list ul>li.act{color:#2858aa;}
+#investor-list ul>li>ol{display:none;}
+#investor-list ul>li.act>ol{display:block;}
+#investor-list ol>li{color:#2858aa;}
+#investor-list ol a{color:#323232;}
+#investor-list a:hover{color:#2858aa;}
+.list-group-item,.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th{border-color:#4479bc;}
+.list-inline{font-size: 0;}
+.list-inline>li{font-size: 1rem;padding-bottom:5px;}
+.list-group-item{padding:.25rem .75rem;display:flex;align-items:center;}
+.list-group-item:focus, .list-group-item:hover{background-color:#c9e1f1;}
+.financial th,.revenue th{font-weight:normal;}
+.report table{max-width:992px;}
+section.revenue{min-height:80vh;}
+.revenue table{max-width:480px;}
+.revenue #data{transition:all .3s;}
+#select-time{width: 15rem;display:inline-block;position:relative;}
+#select-time .caret{
+  position: absolute;
+  right: 8px;
+  top: 49%;
+}
+#select-time select{width: 100%;border:1px solid #4479bc;padding-top:.25rem;padding-bottom:.25rem;line-height:1.6;border-radius:4px;}
+.revenue #note{padding: 0;width: 300px;}
+#investor-revenue-note{
+  padding: 8px;
+  width: 100%;
+  resize: none;
+  border: none;
+  text-align: center;
+}
+.events .container{max-width:992px;}
+.events [class^="col-"]{
+  border:1px solid #4479bc;
+  line-height:1.5;
+  padding-top:.5rem;
+  padding-bottom:.5rem;
+}
+.events pre{
+  padding:0;
+  margin: 0;
+  border:none;
+  background-color:#fff;
+  font-size: 1rem;
+  white-space:pre-wrap;
+  font-family: "Noto Sans TC", cwTeXHei, "Microsoft JhengHei", 微軟正黑體, "Helvetica Neue", sans-serif;
+  overflow:unset;
+}
+.events table{width: 100%;line-height:1.5;max-width:62rem;margin:auto;}
+.events td{padding:.25rem .25rem 1rem;}
+.service{line-height:1.7;}
+.service table{max-width:720px;}
+.service th{font-weight:normal;}
+@media (max-width: 991px) {
+  .list table time{margin:0;}
+}
+@media (min-width: 768px) {
+  .service .mob{display:none;}
+  section.gray-bg{background-color:#fff;}
+}
+@media (max-width: 767px) {
+  .list table time{margin-top: 1rem;}
+  .events td{display:block;width: 100%;}
+  .events td:last-child{border-bottom:1px solid #ebebeb;}
+  .service .desk{display:none;}
+}

@@ -1,0 +1,4 @@
+User-agent: ChatGPT-User
+user-agent: *
+Disallow: /file/
+sitemap: https://ares-pp.ares.com.tw/sitemap.xml

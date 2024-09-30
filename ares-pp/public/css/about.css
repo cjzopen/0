@@ -1,0 +1,9 @@
+@media (min-width: 768px) {
+  .hover-scale:hover{
+    transform: scale(2);
+    transform-origin: center center;
+    position: relative;
+    z-index: 1;
+    transition: all .4s;
+  }
+}

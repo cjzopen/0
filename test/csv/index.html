@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<table id="table">
+  <thead>
+    <tr>
+      <th>時間</th>
+      <th>電話</th>
+      <th>email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2023-01-12</td>
+      <td>023489</td>
+      <td>afds@aefw.com</td>
+    </tr>
+    <tr>
+      <td>1-04-31</td>
+      <td>+8863234-2334-432</td>
+      <td>000qew@com.tw</td>
+    </tr>
+  </tbody>
+</table>
+<div id="csv">csv</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="tableExport.jquery/libs/FileSaver/FileSaver.min.js"></script>
+<script src="tableExport.jquery/tableExport.min.js"></script>
+<script>
+$('#csv').on('click',function(){
+  $('#table').tableExport({type:'csv'});
+})
+
+</script>
+</body>
+</html>

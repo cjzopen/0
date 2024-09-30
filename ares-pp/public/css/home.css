@@ -1,0 +1,104 @@
+.swiper-slide {
+  min-height: 3rem
+}
+.swiper-slide img {
+  width: 100%;
+}
+.card {
+  margin-bottom: 1rem
+}
+.card:hover {
+  border-color: #157e96
+}
+.card:hover .ratio-box>img {
+  transform: scale(1.25);
+  transform-origin: center;
+  transition: all .4s
+}
+.card .ratio-box {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0
+}
+.card h2 {
+  font-size: 1.125rem;
+  margin: 0;
+  margin-top: -1.5rem;
+  margin-left: .5rem;
+  padding: .5rem 1.25rem;
+  border-radius: .25rem;
+  background-color: #157e96;
+  display: inline-block;
+  width: 10rem;
+  white-space: nowrap;
+  font-weight: 700;
+  line-height: 1rem;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: none;
+  border: 1px solid rgba(0,0,0,.06);
+  position: relative;
+  z-index: 3
+}
+.card h4 {
+  font-size: 1rem;
+  font-weight: 700
+}
+.card .card-body {
+  height: 13.5rem;
+  overflow: hidden;
+  position: relative
+}
+.card .card-body .grad {
+  position: absolute;
+  background: linear-gradient(to top,#fff 0,#fff 20%,rgba(255,255,255,0) 100%);
+  height: 1.5rem;
+  width: calc(100% - 2px);
+  bottom: 1px;
+  right: 1px;
+  box-sizing: border-box;
+  pointer-events: none
+}
+main,#number{
+  background-color: #EAF3FF;
+}
+.grid{
+  display: grid;
+}
+#function .grid{
+  gap:20px;
+  grid-template-columns: repeat(auto-fit,272px);
+}
+#function .grid .h-100{
+  background-image: url(/public/img/home/path.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+#function{
+  background-color: #E0EDFE;
+  clip-path: ellipse(150% 100% at 50% 0%);
+  padding-bottom: 10rem;
+}
+#case .grid {
+  gap: 60px;
+  grid-template-columns: repeat(auto-fit,312px);
+}
+#case{
+  background-color: #E0EDFE;
+  clip-path: ellipse(100% 67% at 50% 67%);
+}
+#number{
+  background-image:url(/public/img/home/global.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 360px;
+}
+#number .h1{
+  font-size: min(max(4vw, 2rem), 60px);
+}
+@media (min-width: 1440px) {
+  .swiper-slide {
+    min-height:400px
+  }
+}

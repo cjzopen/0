@@ -1,0 +1,3 @@
+User-agent: *
+
+sitemap: https://pki.ares.com.tw/sitemap.xml

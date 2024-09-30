@@ -1,0 +1,85 @@
+@import "var";
+
+.swipter-article-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 1.5;
+  *{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+.swipter-article-title {
+  font-size: 4vw;
+}
+.swipter-article-content {
+  font-size: 3vw;
+}
+.card{
+  max-width: 22.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+#four-cards{
+  line-height: 1.5;
+  .card:hover {
+    border-color: $_red;
+    .ratio-box>img {
+      transform: scale(1.25);
+      transform-origin: center;
+      transition: all .4s
+    }
+  }
+  .card-title{
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  .card-body {
+    height: 13.5rem;
+    overflow: hidden;
+    // position: relative
+  }
+  .grad {
+    position: absolute;
+    background: -webkit-linear-gradient(bottom, $_white 0%, $_white 20%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to top, $_white 0%, $_white 20%, rgba(255,255,255,0) 100%);
+    height: 1.5rem;
+    width: calc(100% - 2px);
+    bottom: 1px;
+    right: 1px;
+    box-sizing: border-box;
+    pointer-events: none
+  }
+}
+.card-type{
+  font-size: 1.125rem;
+  margin: 0;
+  margin-top: -1.5rem;
+  margin-left: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.25rem;
+  background-color: $_red;
+  display: inline-block;
+  width: 10rem;
+  white-space: nowrap;
+  font-weight: bold;
+  line-height: 1rem;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  text-transform:capitalize;
+  position: relative;
+  z-index: 3;
+}
+@media (min-width: 992px) {
+  .swipter-article-title {
+    font-size: 2.25rem;
+  }
+  .swipter-article-content {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,9 @@
+.table-bordered th, .table-bordered td {
+  border-width: 3px;
+  border-color: #ebebeb;
+  font-family: 'Zapf Dingbats';
+}
+#benefit-1{background-color:#107bcc}
+#benefit-2{background-color:#4eb7b2}
+#benefit-3{background-color:#f8a55f}
+#benefit-4{background-color:#937cb0}

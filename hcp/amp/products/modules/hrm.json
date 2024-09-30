@@ -1,0 +1,48 @@
+{
+  "bookendVersion": "v1.0",
+  "shareProviders": [
+    "facebook",
+    "twitter",
+    "email"
+  ],
+  "components": [
+    {
+      "type": "heading",
+      "text": "更多相關模組介紹"
+    },
+    {
+      "type": "small",
+      "title": "薪資獎金管理模組",
+      "url": "https://hcp.ares.com.tw/products/modules/salary",
+      "image": "https://hcp.ares.com.tw/img/products/modules/salary-structure-m.png",
+      "category": "HCP"
+    },
+    {
+      "type": "small",
+      "title": "差勤請假管理模組",
+      "url": "https://hcp.ares.com.tw/products/modules/attendance",
+      "image": "https://hcp.ares.com.tw/img/products/modules/attendance-structure-m.png",
+      "category": "HCP"
+    },
+    {
+      "type": "small",
+      "title": "地方保險管理模組",
+      "url": "https://hcp.ares.com.tw/products/modules/insurance",
+      "image": "https://hcp.ares.com.tw/img/products/modules/insurance-structure-m.png",
+      "category": "HCP"
+    },
+    {
+      "type": "cta-link",
+      "links": [
+        {
+          "text": "立即來電",
+          "url": "tel:+886-2-25221351,,301"
+        },
+        {
+          "text": "表單諮詢",
+          "url": "https://hcp.ares.com.tw/contact/"
+        }
+      ]
+    }
+  ]
+}

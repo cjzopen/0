@@ -1,0 +1,8 @@
+#list-nav{
+  background-color: #ebebeb;
+}
+@media (min-width: 768px){
+  #list-nav{
+    background-color: #fff;
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+#toc-js{
+  border: 0;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: #EAEBEF;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+#toc-js::before {
+  content: '\6587\7ae0\76ee\9304';
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+}
+#toc-js ol{
+  counter-reset: tocjs;
+  list-style-type: none;
+  padding-left: 1rem;
+  margin-bottom: 0;
+}
+#toc-js li::before {
+  counter-increment: tocjs;
+  content: counters(tocjs, ".") " ";
+}
+</style>
+</head>
+<body>
+  <article id="article">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat amet animi earum. Molestiae ullam dolorem ab amet officiis quas cumque facilis dolore similique ratione fugiat, odio laboriosam natus eum consectetur.</p>
+    <nav id="toc-js"></nav>
+    <h2>sdfa</h2>
+    <p>afds</p>
+    <h3>afdfewf</h3>
+    <p>afea</p>
+    <img class="img-fluid" loading="lazy" width="" height="" src="" alt="*">
+    <h3>h3-2</h3>
+    <p>aef</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore velit quibusdam magni numquam id debitis cupiditate consectetur quos suscipit quidem vel odit, provident ullam consequatur! Aspernatur excepturi sit nam molestias.</p>
+    <h4>h4</h4>
+    <p>wow</p>
+    <h2>h2-2</h2>
+  </article>
+  <article>
+    <h2>hi</h2>
+  </article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="jQuery-TOC-master/dist/jquery.toc.min.js"></script>
+<script>
+$('#toc-js').initTOC({
+scope:'#article',
+overwrite:false,
+prefix:'toc'
+})
+</script>
+</body>
+</html>

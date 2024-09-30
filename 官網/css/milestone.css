@@ -1,0 +1,75 @@
+.year{
+  position:relative;
+  line-height:1.5;
+}
+.year::before{
+  content:'';
+  position:absolute;
+  top: 1.5rem;
+  left:1.7rem;
+  width: 1px;
+  height: 100%;
+  background-color:#2858aa;
+}
+.year::after{
+  content: attr(data-year);
+  position: absolute;
+  left: -1px;
+  top: 0;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  line-height: 3.45rem;
+  text-align: center;
+  color: #fff;
+  background-color: #2858aa;
+}
+.year:nth-child(even):after{
+  background-color:#7d7d7d;
+}
+.event-list{
+  padding-left:4rem;
+  padding-top:.5rem;
+  padding-bottom: .25rem;
+}
+.year ul{
+  position:relative;
+  border:1px solid #2858aa;
+  border-radius:.25rem;
+  margin-bottom:.5rem;
+  padding: .5rem;
+  padding-left:2rem;
+}
+.year ul::before{
+  content:'';
+  position:absolute;
+  width: 8px;
+  height: 8px;
+  background-color:#fff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #2858aa transparent transparent #2858aa;
+  transform: rotate(-45deg);
+  left: -0.25rem;
+  top: 1rem;
+}
+.year:nth-child(even) ul{
+  background-color: #ebebeb;
+}
+.year:nth-child(even) ul::before{
+  background-color:#ebebeb;
+}
+.year figure,.year iframe{
+  display:inline-block;
+  width:100%;
+  max-width:21.875rem;
+}
+.year iframe{
+  max-height: 12.3rem;
+  height:12.3rem;
+  height:22vw;
+  margin:1rem 1rem 1rem 0;
+}
+.year a:hover,.year a:focus{
+  color:#2858aa;
+}

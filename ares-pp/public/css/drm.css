@@ -1,0 +1,117 @@
+/* #compare{
+  --item_width:210px;
+  max-width: 1010px;
+  width: 100%;
+  & .slider-button{
+    margin-right:1rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border:2px solid #06f;
+    color:#06f;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 1rem;
+  }
+  & .slider-button.x{
+    opacity: .2;
+  }
+} */
+#compare{
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 1245px;
+  margin: 0 auto;
+}
+.compare-row{
+  display: grid;
+  /* grid-template-columns: 1fr minmax(auto, 225px) 1fr; */
+  grid-template-columns: 1fr 0.45fr 1fr;
+  gap: 0;
+  & + .compare-row{
+    font-size: 14px;
+  }
+  &:nth-child(even){
+    background-color: #fff;
+  }
+  & .text,
+  & .function{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 48px;
+    text-align: center;
+  }
+  & .text{
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+  }
+  & + .compare-row .function{
+    min-width: 0;
+    max-width: 225px;
+    border-radius: 4px;
+    background-color: #06F;
+    color:#fff;
+  }
+  & .text:first-child{
+    color:#06F;
+  }
+  & + .compare-row .text:first-child::before{
+    content:'\2605';
+  }
+}
+
+#whys{
+  & .list,
+  & .title{
+    position: relative;
+    padding:.5rem 1rem;
+  }
+  & .right .list{
+    padding-left:var(--item_width);
+  }
+  & .item{
+    position: absolute;
+    width: var(--item_width);
+    height: 100%;
+  }
+  & .left .item{
+    right:1rem;
+  }
+  & .right .item{
+    left:1rem;
+  }
+  & .right .title{
+    padding-left: var(--item_width);
+  }
+}
+@media (min-width: 768px){
+  .compare-row + .compare-row{
+    gap:10px;
+    font-size: 1rem;
+  }
+  .compare-row + .compare-row .text:first-child::before{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right:1%;
+  }
+  #whys{
+    & .right .title{
+      padding-left: 1rem;
+    }
+    & .right .list{
+      padding-left:1rem;
+    }
+    & .left .item{
+      right:calc(-1 * var(--item_width));
+    }
+    & .right .item{
+      left:1rem;
+    }
+  }
+}

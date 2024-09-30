@@ -1,0 +1,59 @@
+h1 {
+  font-size: 3rem;
+  font-size: min(max(3vw,1.75rem),3rem);
+}
+
+main>section:nth-of-type(even){
+  background-color: #F1FCFF;
+}
+#contact-circles{
+  display: none;
+}
+.bg-lazyload{background-color:#333}
+
+.mark-color {
+  color: #EE772D;
+}
+.mark-bg{
+  background-color: #EE772D;
+}
+.btn.btn-cimes{
+  background-color: #EE772D;
+  border-color: #EE772D;
+}
+.btn.btn-cimes:hover, .btn.btn-cimes:focus {
+  color: #EE772D;
+}
+
+.card {
+  max-width: 350px
+}
+
+.counter-reset {
+  counter-reset: tele
+}
+
+.counter-item {
+  position: relative
+}
+
+.counter-item::before {
+  content: counter(tele);
+  counter-increment: tele;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #989898;
+  color: #FFF;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  left: 25%;
+  left: min(30%, calc(50% - 75px));
+  top: 0;
+  font-size: 1.25rem
+}
+
+/* .counter-item .fff-bg {
+  border-radius: 50%
+} */

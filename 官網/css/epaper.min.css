@@ -1,0 +1,30 @@
+.paging ul{
+  display: inline;
+}
+.paging li{
+  display: inline-block;
+}
+.thumbnail{
+  min-height: auto;
+}
+.epaper-text{
+  line-height: 1.5;
+  background-color: #323232;
+}
+.epaper-title a{
+  line-height: 1.5;
+  font-size: 1.37rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+@media (min-width: 768px){
+  .epaper-text{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}

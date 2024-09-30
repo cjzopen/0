@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email 檢查與匯出</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #email-input {
+            width: 300px;
+            margin-bottom: 10px;
+        }
+
+        #error-message {
+            color: red;
+        }
+
+        #email-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        #email-list li {
+            margin-bottom: 5px;
+        }
+
+        #output-button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email 檢查與匯出</h1>
+
+    <input type="email" id="email-input" placeholder="輸入電子郵件">
+    <button id="add-email-button">新增 Email</button>
+    <span id="error-message"></span>
+
+    <ul id="email-list"></ul>
+
+    <button id="output-button">匯出 Email</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const emails = []; // 用來存放輸入的 email
+            const emailListElement = $('#email-list');
+            const errorMessageElement = $('#error-message');
+
+            $('#add-email-button').on('click', function() {
+                const email = $('#email-input').val().trim().toLowerCase();
+                const errorMessage = validateEmail(email);
+
+                if (errorMessage) {
+                    errorMessageElement.text(errorMessage);
+                    return;
+                }
+
+                if (emails.includes(email)) {
+                    errorMessageElement.text('此 Email 已輸入過');
+                    return;
+                }
+
+                emails.push(email);
+                errorMessageElement.text('');
+
+                const emailItem = $('<li>').text(email);
+                emailListElement.append(emailItem);
+
+                $('#email-input').val('');
+            });
+
+            $('#output-button').on('click', function() {
+                if (emails.length === 0) {
+                    alert('沒有任何 Email 可以匯出');
+                    return;
+                }
+
+                const emailContent = emails.join('\n');
+                const fileName = 'emails.txt';
+
+                const blob = new Blob([emailContent], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = fileName;
+                link.click();
+
+                URL.revokeObjectURL(url);
+            });
+
+            function validateEmail(email) {
+                const regex = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+                return regex.test(email) ? '' : '無效的 Email 格式';
+            }
+        });
+    </script>
+</body>
+</html>

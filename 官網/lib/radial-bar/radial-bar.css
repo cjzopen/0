@@ -1,0 +1,66 @@
+.radial-bar { 
+  margin: 50px auto;
+  width: 160px;
+  height: 160px;
+  background-color: #ebebeb;
+  border-radius: 50%;
+  line-height:2;
+}
+
+.radial-bar__mask {
+  clip: rect(0px, 160px, 160px, 80px);
+  -webkit-backface-visibility: hidden;
+  transition: -webkit-transform 1s;
+  transition: -ms-transform 1s;
+  transition: transform 1s;
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.radial-bar__fill {
+  -webkit-backface-visibility: hidden;
+  transition: -webkit-transform 1s;
+  transition: -ms-transform 1s;
+  transition: transform 1s;
+  border-radius: 50%;
+  clip: rect(0px, 80px, 160px, 0px);
+  background-color: #98d24d;
+  width: 160px;
+  height: 160px;
+  position: absolute;
+}
+
+.radial-bar__inset {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: table-cell;
+}
+
+.radial-bar__percent {
+  text-align: center;
+  position: relative;
+  top: 33%;
+  transform: translateY(-50%);
+  color: #98d24d;
+  font-size: 38px;
+}
+.radial-bar__percent span{
+  padding:0 4px;
+  border-bottom:2px solid #98d24d;
+}
+.radial-bar__inset .txt{
+  /*transform: translateY(-50%);*/
+  display:inline-block;
+  width: 70%;
+  text-align:center;
+  line-height:1.4;
+  margin:.25rem auto 0;
+  /*display:none;*/
+}

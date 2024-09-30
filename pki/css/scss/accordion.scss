@@ -1,0 +1,51 @@
+@import "var";
+
+$_deviation:1.625rem;
+
+.accordion-wrapper{
+  padding-right:$_deviation;
+}
+.area-accordion,.area-accordion-panel{
+  border-left:1px solid $_red;
+  margin-left:$_deviation;
+}
+.area-accordion {
+  display: block;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.25rem;
+  // border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  &::before{
+    content: '\25C9';
+    color: $_red;
+    font-weight: bold;
+    float: left;
+    padding-right: 5px;
+    margin-left: -$_deviation;
+  }
+  &::after{
+    content:'';
+    display: block;
+    clear:both;
+  }
+  &:hover,&.active {
+    color:$_red;
+  }
+  &:first-of-type{
+    padding-top:0;
+  }
+  &:last-of-type{
+    padding-bottom:0;
+  }
+}
+
+.area-accordion-panel {
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}

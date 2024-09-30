@@ -1,0 +1,16 @@
+#module a{
+  color:#fff;
+  &:hover{
+    text-decoration: underline;
+  }
+  & svg{
+    fill:#d5562b;
+    & circle{
+      fill:#fff;
+    }
+  }
+}
+.module-name{
+  border-radius: 8px;
+  background-color: #d5562b;
+}

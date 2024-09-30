@@ -1,0 +1,151 @@
+.h-n{position:relative;}
+.h-n ul{display:none;padding: 0;position:absolute;top: 100%;left: 0;width: 10rem;z-index:999;}
+.h-n li{
+  padding:.75rem .5rem;display:inline-block;width: 10rem;
+  background: #f8f8f8;
+  border:1px solid #ddd;
+}
+.h-n li img{
+  margin-right:.5rem;
+}
+.h-n li.act{
+  background-color:#fff;
+  background-image:none;
+  color:#2858aa;
+  position:relative;
+}
+.h-n li.act:before,.h-n li.act:after{
+  content:'';
+  position:absolute;
+  background-color: #2858aa;
+  display:none;
+}
+.h-n li.act:before{
+  width: 100%;
+  height: 4px;
+  top: 100%;
+  left: 0;
+}
+.h-n li.act:after{
+  bottom: -4px;
+  left: 50%;
+  height: 5px;
+  width: 5px;
+  margin: 0 0 -3px -2px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.h-n a{display:block;width: 100%;height: 100%;}
+#circle{
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+#circle .circle{
+  width: 10rem;
+  height: 10rem;
+  border-radius:50%;
+  box-shadow: 0 0 0 4px #98d24d;
+  margin:1.5rem 1rem 0;
+  line-height:1.4;
+}
+#circle p {
+  margin:0;
+  width: 100%;
+  padding: 0 1rem;
+}
+#circle span{
+  font-size: 1.75rem;
+  border-bottom:2px solid #98d24d;
+  color:#4fa6c9;
+}
+.h-n-toggle {padding: 6px;display:inline-block;width:160px;color:#fff;background-color:#2858aa;border:4px solid #2858aa;border-radius:4px;text-align:center;cursor:pointer;box-shadow:0 0 0 1px #787878 inset;border-right:0;}
+#type{
+  min-height:34rem;
+}
+.card{
+  width: 100%;
+  /*max-width:200px;*/
+  max-width:252px;
+}
+
+.card-border{
+  border:1px solid;
+  border-color:#ef973f;
+}
+.card-head{
+  background-color:#ef973f;
+  color:#fff;
+  font-size: 1.25rem;
+  padding:15px;
+}
+.card-body{
+  padding:15px 5px;
+  min-height: 13rem;
+}
+.card-group>*:nth-child(even) .card-border{
+  border-color:#14335d;
+}
+.card-group>*:nth-child(even) .card-head{
+  background-color:#14335d;
+}
+.card-group>*{margin-top:1rem;}
+
+.isd .card-border{
+  border-color:#65BBEF;
+}
+.isd .card-head{
+  background-color:#65BBEF;
+}
+.isd .card-group>*:nth-child(even) .card-border{
+  border-color:#646464;
+}
+.isd .card-group>*:nth-child(even) .card-head{
+  background-color:#646464;
+}
+#benefit{
+  background-repeat:no-repeat;
+  background-position:left top;
+  background-color:#1d445f;
+  background-size:auto;
+  background-image:url(/img/product/ncsist/benefit-banner-1.png);
+  padding-top:300px;
+  padding-left:15px;
+  color:#f1f1f1;
+}
+.isd+#benefit{
+  background-color:#3479a7;
+  background-image:url(/img/product/ncsist/benefit-banner-2.png);
+}
+.lineme+#benefit{
+  background-repeat:repeat-y;
+  background-color:#4AB651;
+  background-image:url(/img/product/ncsist/benefit-banner-3.png);
+  padding-top:3rem!important;
+  padding-left:15px!important;
+}
+@media (min-width: 992px) {
+  .col-md-5-1{width: 20%;}
+}
+@media (min-width: 768px) {
+  .h-n ul{position:static;top: auto;width: 100%;padding:15px 0 1px;}
+  .h-n li{
+    margin-right:.5rem;margin-left: .5rem;
+    background: #ebebeb;
+    background-image: -webkit-linear-gradient(180deg, #fff 0%, #ebebeb 100%);
+    background-image: -o-linear-gradient(180deg, #fff 0%, #ebebeb 100%);
+    background-image: -moz-linear-gradient(180deg, #fff 0%, #ebebeb 100%);
+    background-image: linear-gradient(180deg, #fff 0%, #ebebeb 100%);
+    background-repeat: no-repeat;
+    border:none;
+  }
+  .h-n ul,.h-n li.act:before,.h-n li.act:after{display:block!important;}
+  .h-n-toggle{display:none;}
+  #benefit{
+    background-size:contain;
+    padding-top:3rem;
+    padding-left:480px;
+  }
+}

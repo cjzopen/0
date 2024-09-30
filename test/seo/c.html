@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>voice</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <link rel="canonical" href="https://">
+  <link rel="shortcut icon" href="">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://">
+</head>
+<body>
+<div style="max-width: 992px;margin:0 auto">
+  <canvas id="c1"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=Q27rQi78" defer></script>
+<script>
+function random_num(min,max){
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function random_color(min,max){
+  return '#'+(random_num(min,max)).toString(16)+(random_num(min,max)).toString(16)+(random_num(min,max)).toString(16)+(random_num(min,max)).toString(16)+(random_num(min,max)).toString(16)+(random_num(min,max)).toString(16);
+}
+var ctx = document.getElementById('c1').getContext('2d');
+var chart = new Chart(ctx, {
+  // The type of chart we want to create
+  type: 'line',
+  // The data for our dataset
+  data: {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [
+      {
+        label: 'My First dataset',
+        fill:false,
+        lineTension:0,
+        borderColor:random_color(0,13),
+        data: [0, 10, 5, 2, 20, 30, 45]
+      },
+      {
+        label: '2t dataset',
+        fill:false,
+        lineTension:0,
+        borderColor:random_color(0,13),
+        data: [10, 20, 25, 22, 20, 20, 45]
+      },
+      {
+        label: '3 dataset',
+        fill:false,
+        lineTension:0,
+        borderColor:random_color(0,13),
+        data: [0, 20, 15, 12, 20, 10, 25]
+      },
+    ]
+  },
+  options: {}
+});
+window.addEventListener("load", function(event) {
+  responsiveVoice.speak("測試", "Chinese Female");
+});
+
+</script>
+</body>
+</html>

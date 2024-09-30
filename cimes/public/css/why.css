@@ -1,0 +1,15 @@
+.vlr{
+  writing-mode: vertical-lr;
+  letter-spacing:8px;
+}
+.blue-head{
+  border-top:5px solid #097189!important;
+}
+.blue-light-bg{
+  background-color: #0971891A;
+}
+@media (min-width: 1234px) {
+  .table td{
+    height: 124px;
+  }
+}

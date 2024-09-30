@@ -1,0 +1,128 @@
+*{
+	font-display:swap;
+}
+form {
+	background: #FFF;
+	padding: 1.429em;
+	/*border-left: 1px solid #ccc;*/
+	/*border-right: 1px solid #ccc;*/
+	}
+
+fieldset { margin-bottom: 0.714em; }
+
+fieldset:last-of-type { margin-bottom: 0; }
+
+form h2, legend {
+	color: #656257;
+	font-weight: bold;
+	padding-bottom: 0.714em;
+	text-shadow: 0 1px 1px #999;
+	}
+
+legend { border-color: #D3CDBB; }
+
+#agreeToTerms input { float: none; }
+
+form .btn-primary {
+    color: #FFF;
+    background-color: #F59E25;
+    border-color: #FF8900;
+    }
+
+#modalTerms .modal-header {
+	padding: 3px;
+	border-bottom: 0;
+	}
+
+#modalTerms .modal-header div {
+	padding: 0.714em;
+	color: #fff;
+	background-color: #428BCA;
+	}
+
+#modalTerms .modal-header button { color: #fff; }
+
+#modalTerms .modal-title { font-size: 1.15em; }
+
+#modalTerms .modal-body h3 {
+	font-size: 1.6em;
+	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: 30px;
+	}
+
+#modalTerms .modal-body h4 {
+	color: blue;
+	margin-top: 40px;
+	}
+
+#modalTerms li {
+	margin-left: -1.5em;
+	margin-bottom: 1em;
+	}
+
+.help-block { text-align: right; }
+
+#agreeToTerms .help-block { text-align: center; }
+
+label, .has-feedback .control-label { color: #656257; }
+
+.ajax_loader {
+	background: url("img/spinner_squares_circle.gif") no-repeat center center transparent;
+	width: 100%;
+	height: 100%;
+	}
+
+.blue-loader .ajax_loader {background: url("img/ajax-loader_blue.gif") no-repeat center center transparent;}
+
+/* ie7 fix
+ ------------------ */
+form, fieldset {
+	*margin-top: 0;
+	*margin-bottom: 0;
+	}
+
+.form-control {
+	*height: auto;
+	*width: 95%;
+	}
+
+.has-feedback .form-control { *padding-right: 12px; }
+.has-feedback i { *display: none !important; }
+.help-block { *display: block; }
+/* ---------------- */
+
+.fbbox {
+	background: url("img/fb.png") no-repeat scroll left center transparent !important;
+	display: block;
+	float: right;
+	padding: 0 5px 0 46px;
+	width: 292px;
+	height: 270px;
+	right: -246px;
+	top: 5%;
+	z-index: 99999;
+	position: fixed;
+	}
+
+.fbbox div {
+	border: none;
+	position: relative;
+	display: block;
+	}
+
+.fbbox span {
+	bottom: 12px;
+	font: 8px "lucida grande", tahoma, verdana, arial, sans-serif;
+	position: absolute;
+	right: 6px;
+	text-align: right;
+	z-index: 99999;
+	}
+
+.fbbox span a {
+	color: #808080;
+	text-decoration: none;
+	}
+
+.fbbox span a:hover { text-decoration: underline; }

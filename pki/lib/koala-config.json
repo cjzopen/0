@@ -1,0 +1,25 @@
+// Default project settings, you can edit it and set custom settings.
+{
+  // The mappings of source directory and output directory
+  "mappings": [
+    // {
+    //  "src": "path/to/source",
+    //  "dest": "path/to/output"
+    // }
+  ],
+
+  // Add the ignore rules that Koala will not search them.
+  // e.g. ["*.json", "*.txt", "test", "path/libs"]
+  "ignores": ["bootstrap4.3.1/bootstrap.scss","bootstrap4.3.1/bootstrap-grid.scss","bootstrap4.3.1/bootstrap-reboot.scss"],
+
+  // Options of Compilers.
+  "options": {
+    "autocompile": false
+    // "key": "val",
+    // "key2": "val2"
+    // ...
+  },
+
+  // An array of filesystem paths which should be searched for js/LESS/Sass templates imported with the @import/@append/@prepend directive.
+  "includePaths": []
+}

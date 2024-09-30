@@ -1,0 +1,46 @@
+.black-card{
+  display: grid;
+  width: 100%;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows: auto;
+  row-gap:1rem;
+  column-gap:1rem;
+  grid-template-areas:
+  "a b"
+  "c c"
+  "d d";
+}
+.black-card>:nth-child(1){
+  grid-area: a;
+}
+.black-card>:nth-child(2){
+  grid-area: b;
+}
+.black-card>:nth-child(3){
+  grid-area: c;
+}
+.black-card>:nth-child(4){
+  grid-area: d;
+}
+.howmuch{
+  display: none;
+}
+#fixed-consult{
+  position: fixed;
+  width: 100%;
+  padding: 1rem;
+  left: 0;
+  bottom: 0;
+}
+@media (min-width:768px) {
+  .black-card{
+    grid-template-columns:1fr 1fr 2fr;
+    grid-template-areas:
+    "a b d"
+    "c c d";
+  }
+  .howmuch{
+    display: inline-block;
+  }
+  #fixed-consult{display: none;}
+}

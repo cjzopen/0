@@ -1,0 +1,2 @@
+User-agent: *
+sitemap: https://cimes.ares.com.tw/sitemap.xml

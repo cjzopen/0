@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <link rel="canonical" href="">
+  <link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css">
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+<!-- <script src="geojson.js"></script> -->
+</head>
+<body>
+<style>
+html,body{font-size: 16px;}
+#map-wrapper{
+  position: relative;
+  max-width: 1440px;
+}
+#map {
+  width: 100%;
+  height: 600px;
+  border: 1px solid #ccc;
+}
+/* #message{
+  background-color: #fff;
+  position: absolute;
+  max-width: 400px;
+  padding: 1rem;
+  left: 3rem;
+  top: 3rem;
+  z-index: 999;
+} */
+.leaflet-popup{
+  font-size: 1rem;
+}
+.popup-fixed{
+  left: 3rem!important;
+  top: 3rem!important;
+  bottom: auto!important;
+  transform: none!important;
+}
+.popup-fixed .leaflet-popup-content-wrapper{
+  border-radius: 4px;
+}
+.popup-fixed .leaflet-popup-content{
+  line-height: 1.7;
+  margin: 1.25rem;
+}
+.popup-fixed .leaflet-popup-tip-container{
+  display: none!important;
+}
+#progress {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  left: 400px;
+  top: 300px;
+  width: 200px;
+  height: 20px;
+  margin-top: -20px;
+  margin-left: -100px;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  padding: 2px;
+}
+
+#progress-bar {
+  width: 0;
+  height: 100%;
+  background-color: #76A6FC;
+  border-radius: 4px;
+}
+</style>
+<div id="map-wrapper">
+  <div id="message"></div>
+  <div id="map"></div>
+  <span>Markers will show on the bottom 2 zoom levels even though the markers would normally cluster.</span>
+</div>
+<div class="container">
+  <p>弄完一次重整後再弄</p>
+    <input type="text" id="f1">
+    <input type="text" id="f2">
+    <button id="ff" type="button">送出</button>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+var addressPoints =[
+  [25.0789549,121.4007,{name:"祥茂光電", text:"成立於 1997 年，主攻光通訊模組開發，為全球一流數據中心、移動寬頻、光纖到戶領域之客戶提供高速傳輸解決方案，期許成為「光通訊業特斯拉」。",product:"ciMes 製造執行系統"}]
+];
+$('#ff').on('click',function(){
+  addressPoints.push([$('#f1').val(),$('#f2').val(),{name:"TEST", text:"TEST DESCRIPTION",product:"產品"}]);
+
+// https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png
+    var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+      }),
+      latlng = L.latLng(23.65, 120.77);
+
+    var map = L.map('map', {center: latlng, zoom: 7, layers: [tiles]});
+
+    var pane = map.createPane('fixed', document.getElementById('map'));
+
+    var markers = L.markerClusterGroup({
+      disableClusteringAtZoom: 17,
+      showCoverageOnHover: false
+    });
+    for (var i = 0; i < addressPoints.length; i++) {
+      var a = addressPoints[i];
+      var company = a[2];
+      var marker = L.marker(L.latLng(a[0], a[1]), { title: company.name });
+      var popup_area = L.popup({
+        pane: 'fixed',
+        maxWidth:320,
+        // minWidth:320,
+        className: 'popup-fixed',
+        autoPan: false
+      }).setContent('<p>企業名稱：'+company.name+'</p><p>企業簡介：'+company.text+'</p><p>使用產品：'+company.product+'</p>');
+      marker.bindPopup(popup_area);
+      markers.addLayer(marker);
+    }
+
+    map.addLayer(markers);
+
+    // map.on('popupopen', function(e) {
+    //   console.log(e.popup._content);
+    //   $('#message').html(map._layers[e.popup._leaflet_id]._source.options.title);
+    // });
+    // map.on('popupclose', function(e) {
+    //   $('#message').html('');
+    // });
+})
+  </script>
+</body>
+</html>

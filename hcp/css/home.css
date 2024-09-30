@@ -1,0 +1,81 @@
+.quote {
+  padding: 2.5rem;
+  border-top: 1px solid #6a70ba;
+  border-bottom: 1px solid #6a70ba;
+  position: relative;
+  quotes: "\201C" "\201D" "\02BB" "\002C"
+}
+
+.quote::before,.quote::after {
+  display: block;
+  position: absolute;
+  height: 2rem;
+  top: -.5rem;
+  left: 0;
+  background-color: #f4f4f4;
+  line-height: 1;
+  color: #6a70ba
+}
+
+.quote::after {
+  top: 90%;
+  left: auto;
+  right: -.5rem
+}
+
+#contact-circles {
+  display: none
+}
+
+.big-size {
+  font-size: 3rem
+}
+
+@media (min-width: 1440px) {
+  .swiper-slide {
+    min-height:400px
+  }
+}
+
+@media (min-width: 576px) {
+  #bg-1 {
+    padding-bottom:27.5%;
+    background-size: 100% auto;
+    background-position: bottom center
+  }
+
+  .dialog {
+    padding: 2.5rem;
+    margin-bottom: 4rem;
+    background-color: #fff;
+    position: relative;
+    border-radius: 14px;
+    order: 1
+  }
+
+  .dialog::after {
+    position: absolute;
+    content: "";
+    bottom: -3rem;
+    left: 3rem;
+    width: 0;
+    height: 0;
+    border-width: 1rem 3rem 3rem;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff
+  }
+
+  .quote::before,.quote::after {
+    background-color: #fff;
+    line-height: 1
+  }
+
+  .exp-company {
+    order: 2
+  }
+
+  .big-size {
+    font-size: 5rem;
+    line-height: 1.1;
+  }
+}

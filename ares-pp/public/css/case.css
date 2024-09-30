@@ -1,0 +1,21 @@
+.grid{
+  display: grid;
+}
+#industry .grid{
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit,270px);
+}
+.grid-box{
+  position: relative;
+  background-color: #333;
+}
+#industry .text{
+  background-color: rgba(146, 146, 146,.7);
+  color:#fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding:12px;
+  min-height: 174px;
+}
