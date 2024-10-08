@@ -1,6 +1,6 @@
 <?php
 require('ip.php');
-$ares = "sqlite:/sites/global/events.db";
+$ares = "sqlite:/example/global/events.db";
 try{
     $db = new PDO($ares);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

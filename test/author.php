@@ -17,7 +17,7 @@ if (isset($_POST['submitted'])) {
   $link = !empty($link) ? "'$link'" : "NULL";
   if($name){
     try{
-      $db = new PDO("sqlite:/sites/global/author.db");
+      $db = new PDO("sqlite:/example/global/author.db");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $msg['db'] = true;
     }catch (PDOException $e) {

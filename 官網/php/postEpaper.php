@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         try{
-            $db = new PDO("sqlite:/sites/global/epaper.db");
+            $db = new PDO("sqlite:/example/global/epaper.db");
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch (PDOException $e) {
             $msg = 'newDbError';
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         //收信者與寄信
-        include_once "/sites/global/phpMailer/PHPMailerAutoload.php";
+        include_once "/example/global/phpMailer/PHPMailerAutoload.php";
                 
         $mail = new PHPMailer();
         $mail->isSMTP();

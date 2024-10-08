@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     	$ip = $_SERVER['REMOTE_ADDR'];
 
         try{
-            $db = new PDO("sqlite:/sites/global/epaper.db");
+            $db = new PDO("sqlite:/example/global/epaper.db");
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch (PDOException $e) {
             $msg = 'newDbError';
@@ -52,13 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $total = $result->fetchColumn();
 
             //收信者與寄信
-        // include_once "/sites/global/phpMailer/PHPMailerAutoload.php";
-        include_once "/sites/global/PHPMailer6/src/Exception.php";
-        include_once "/sites/global/PHPMailer6/src/PHPMailer.php";
-        include_once "/sites/global/PHPMailer6/src/SMTP.php";
-        include_once "/sites/global/PHPMailer6/src/OAuth.php";
+        // include_once "/example/global/phpMailer/PHPMailerAutoload.php";
+        include_once "/example/global/PHPMailer6/src/Exception.php";
+        include_once "/example/global/PHPMailer6/src/PHPMailer.php";
+        include_once "/example/global/PHPMailer6/src/SMTP.php";
+        include_once "/example/global/PHPMailer6/src/OAuth.php";
         $mail = new PHPMailer();
-        include "/sites/global/PHPMailer6/ssl_setting.php";
+        include "/example/global/PHPMailer6/ssl_setting.php";
         $mail->setFrom('edm@ares.com.tw', '電子報');
         // $mail->AddEmbeddedImage('banner.png', 'banner');
         $mail->AddAddress('m1_all@ares.com.tw', '行銷部');

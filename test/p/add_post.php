@@ -64,8 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['qq']) && $_SERVER['HTT
   // $number_of_point = !empty($number_of_point) ? $number_of_point : 1;
 
   $msg =array();
-  // $ares = "sqlite:/sites/golbals/events.db";
-  $ares = "sqlite:/sites/global/epaper-article.db";
+  // $ares = "sqlite:/example/golbals/events.db";
+  $ares = "sqlite:/example/global/epaper-article.db";
   putenv("TZ=ASIA/TAIPEI");
   $submitDate = date("Y-m-d H:i:s", time());
   try{

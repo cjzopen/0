@@ -23,7 +23,7 @@ table, th, td {
 </style>
 <?php
 function article($product){
-  $db = new PDO("sqlite:/sites/global/epaper-article.db");
+  $db = new PDO("sqlite:/example/global/epaper-article.db");
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $rs = $db->query("SELECT title, link, keyword FROM article WHERE `date` <= date('now','-0 day') AND product LIKE '%{$product}%' ")->fetchAll();
   echo '<h1>'.$product.'</h1><table><tbody>';
@@ -80,7 +80,7 @@ article('Analyzer');
 
 
 function keywords($product){
-  $db = new PDO("sqlite:/sites/global/epaper-article.db");
+  $db = new PDO("sqlite:/example/global/epaper-article.db");
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $rs = $db->query("SELECT keyword FROM article WHERE `date` <= date('now','-0 day') AND product LIKE '%{$product}%' ")->fetchAll();
   $keyword_array=array();

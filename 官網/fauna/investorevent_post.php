@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $content  = @htmlspecialchars(stripslashes($_POST['content']),  ENT_QUOTES);
 
   $msg =array();
-  $ares = "sqlite:/sites/global/investor.db";
+  $ares = "sqlite:/example/global/investor.db";
   putenv("TZ=ASIA/TAIPEI");
   $submitDate = date("Y-m-d H:i:s", time());
   try{

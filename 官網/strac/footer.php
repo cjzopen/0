@@ -71,4 +71,4 @@
   </footer>
   </div>
 <script src="/js/main2016.js?2006" async></script>
-<?php include_once "/sites/global/cookie-notification.php"; ?>
+<?php include_once "/example/global/cookie-notification.php"; ?>

@@ -25,7 +25,7 @@ include($_SERVER['DOCUMENT_ROOT'].'/template/head.php');
 <?php
 include($_SERVER['DOCUMENT_ROOT'].'/template/home-slider.php');
 try {
-  $db = new PDO('sqlite:/sites/global/events.db');
+  $db = new PDO('sqlite:/example/global/events.db');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
   echo 'Connection failed: ' . $e->getMessage();
@@ -57,7 +57,7 @@ foreach ($rs as $row) {
   $_html2=$_html2.'<li class="news-list" data-photo="'.$row['img'].'"><a class="d-flex align-items-center w-100" href="'.$row['href'].'"><time class="pr-2">'.$row['date'].'</time><small class="rounded color-white bg-black px-1 mr-2">'.$row['product'].'</small><div class="news-title">'.strip_tags($row['title']).'</div></a></li>';
 }
 try {
-  $db = new PDO('sqlite:/sites/global/epaper-article.db');
+  $db = new PDO('sqlite:/example/global/epaper-article.db');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
   echo 'database connection failed: ' . $e->getMessage();

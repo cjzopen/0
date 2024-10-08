@@ -1,5 +1,5 @@
 <?php
-$db = new PDO("sqlite:/sites/global/epaper.db");
+$db = new PDO("sqlite:/example/global/epaper.db");
 
 $subscribe = array();
 $result = $db->query("SELECT email FROM mailinglist WHERE confirmed='1'");

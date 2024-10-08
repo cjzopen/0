@@ -8,7 +8,7 @@ if(!isset($_GET['uid'])){
 }else{
   $uid = $_GET['uid'];
   try{
-    $db = new PDO("sqlite:/sites/global/epaper.db");
+    $db = new PDO("sqlite:/example/global/epaper.db");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }catch (PDOException $e) {
     $msg = 'newDbError';
@@ -40,13 +40,13 @@ if(!isset($_GET['uid'])){
 
 
     //收信者與寄信
-    // include_once "/sites/global/phpMailer/PHPMailerAutoload.php";
-    include_once "/sites/global/PHPMailer6/src/Exception.php";
-    include_once "/sites/global/PHPMailer6/src/PHPMailer.php";
-    include_once "/sites/global/PHPMailer6/src/SMTP.php";
-    include_once "/sites/global/PHPMailer6/src/OAuth.php";
+    // include_once "/example/global/phpMailer/PHPMailerAutoload.php";
+    include_once "/example/global/PHPMailer6/src/Exception.php";
+    include_once "/example/global/PHPMailer6/src/PHPMailer.php";
+    include_once "/example/global/PHPMailer6/src/SMTP.php";
+    include_once "/example/global/PHPMailer6/src/OAuth.php";
     $mail = new PHPMailer();
-    include "/sites/global/PHPMailer6/ssl_setting.php";
+    include "/example/global/PHPMailer6/ssl_setting.php";
     $mail->setFrom('edm@ares.com.tw', '資通電腦');
     // $mail->AddEmbeddedImage('banner.png', 'banner');
     $mail->AddAddress('m1_all@ares.com.tw', '行銷部');
@@ -92,7 +92,7 @@ MAILBODY;
     $mail->Subject = '親愛的'. $name.'，歡迎您訂閱資通電腦電子報！最精彩的消息都在這~不要錯過！';
 
     try {
-      $db = new PDO('sqlite:/sites/global/epaper-article.db');
+      $db = new PDO('sqlite:/example/global/epaper-article.db');
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e) {
       echo 'database connection failed: ' . $e->getMessage();
@@ -101,7 +101,7 @@ MAILBODY;
     $rs = $db->query("SELECT `date` FROM article WHERE `date` <= date('now') ORDER BY `date` DESC LIMIT 1");
     $last_date = $rs->fetchColumn();
 
-    $file_path = '/sites/edm/dm/test/'.$last_date.'.html';
+    $file_path = '/example/edm/dm/test/'.$last_date.'.html';
     $html_content = file_get_contents($file_path);
     $mail->MsgHTML($html_content);
     $mail->send();

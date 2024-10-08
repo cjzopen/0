@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SERVER['HTTP_HOST'] == 'www.ares.c
 
 
   $response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : null;
-  $privatekey = "6LcpDzsUAAAAAK56V74Q_MTPgYaJyAhwytvyRZPe";
+  $privatekey = "*******";
   $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$privatekey.'&response='.$response);
   $responseData = json_decode($verifyResponse);
   if($responseData->success){
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SERVER['HTTP_HOST'] == 'www.ares.c
     exit();
   }
 
-  // require_once '/sites/global/recaptcha-master/src/autoload.php';
+  // require_once '/example/global/recaptcha-master/src/autoload.php';
   // $recaptcha = new \ReCaptcha\ReCaptcha($privatekey);
   // // $recaptcha = new \ReCaptcha\ReCaptcha($privatekey, new \ReCaptcha\RequestMethod\CurlPost());
   // $resp = $recaptcha->setExpectedHostname('ares.com.tw')
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SERVER['HTTP_HOST'] == 'www.ares.c
 
 
   // $response   = isset($_POST["g-recaptcha-response"]) ? $_POST['g-recaptcha-response'] : null;
-  // $privatekey = "6LcpDzsUAAAAAK56V74Q_MTPgYaJyAhwytvyRZPe";
+  // $privatekey = "*******";
 
   // $ch = curl_init();
   // curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SERVER['HTTP_HOST'] == 'www.ares.c
   // require_once "recaptchalib.php";
 
   // // your secret key
-  // $secret = "6LcpDzsUAAAAAK56V74Q_MTPgYaJyAhwytvyRZPe";
+  // $secret = "*******";
 
   // // empty response
   // $response = null;
@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SERVER['HTTP_HOST'] == 'www.ares.c
 
 
     try{
-      $db = new PDO("sqlite:/sites/global/consult.db");
+      $db = new PDO("sqlite:/example/global/consult.db");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }catch (PDOException $e) {
       $msg['db'] = 'newDbError';
@@ -153,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SERVER['HTTP_HOST'] == 'www.ares.c
       $data = openssl_decrypt($encryptedData, 'AES-256-CBC', $key, 0, substr($key, 0, 16));
       return $data;
     }
-    $encryptionKey = 'ourokroniiisperfect';
+    $encryptionKey = 'ouroiinorkisperfect';
     $companyEncrypt = encryptData($company, $encryptionKey);
     $nameEncrypt = encryptData($name, $encryptionKey);
     $phoneEncrypt = encryptData($phone, $encryptionKey);
@@ -167,11 +167,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SERVER['HTTP_HOST'] == 'www.ares.c
     $rs = null;
 
 //各產品對應收信者與寄信
-    include_once "/sites/global/phpMailer/PHPMailerAutoload.php";
+    include_once "/example/global/phpMailer/PHPMailerAutoload.php";
 
     function sendmail($product, $recipients, $body) {
       $mail = new PHPMailer();
-      include "/sites/global/PHPMailer6/ssl_setting.php";
+      include "/example/global/PHPMailer6/ssl_setting.php";
       $mail->isHTML(true);
       $mail->Encoding = "8bit";
       $mail->setFrom('Consult@ares.com.tw', '產品諮詢');
@@ -266,9 +266,9 @@ body>table{margin:auto;}ul,ol{margin:0;}a, a:link a:hover{color:#2858aa;text-dec
 </html>
 MAILBODY;
       //各產品對應收信者
-      include "/sites/global/PHPMailer6/add_address_check.php";
+      include "/example/global/PHPMailer6/add_address_check.php";
       sendmail($product, $addAddress, $body);
-      include_once "/sites/global/crm/product-label-and-update-json.php";
+      include_once "/example/global/crm/product-label-and-update-json.php";
     }
 
     //委外服務 與 政府專案 有另外一個資料庫
@@ -307,7 +307,7 @@ MAILBODY;
       $md5 = md5($email);
       $uid = $md5.rand_string(16);
       try{
-        $db = new PDO("sqlite:/sites/global/epaper.db");
+        $db = new PDO("sqlite:/example/global/epaper.db");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       }catch (PDOException $e) {
         $msg['db'] = 'newDbError';
@@ -335,7 +335,7 @@ MAILBODY;
           $rs = $db->exec($query);
         }
         $mail = new PHPMailer();
-        include "/sites/global/PHPMailer6/ssl_setting.php";
+        include "/example/global/PHPMailer6/ssl_setting.php";
         $mail->isHTML(true);
         $mail->Encoding = "8bit";
         $mail->setFrom('edm@ares.com.tw', '資通電子報');

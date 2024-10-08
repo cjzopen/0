@@ -1,7 +1,7 @@
 <?php
 $i = 0;
 $lists = array();
-$global_db = "sqlite:/sites/global/events.db";
+$global_db = "sqlite:/example/global/events.db";
 try {
   $db = new PDO($global_db);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -48,7 +48,7 @@ function product_events($product,$string) {
   $i = 0;
   $lists = array();
   $_html = '';
-  $db = new PDO("sqlite:/sites/global/events.db");
+  $db = new PDO("sqlite:/example/global/events.db");
 
   $query = "SELECT news.id, news.date, news.title, news.content, news.redirect, news.news_name, news.img, news.description
       FROM news, articles

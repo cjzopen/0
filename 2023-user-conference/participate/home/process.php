@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		include_once '../_assets/inc/phpMailer/PHPMailerAutoload.php';
 
 		$mail = new PHPMailer();
-		include "/sites/global/PHPMailer6/ssl_setting.php";
+		include "/example/global/PHPMailer6/ssl_setting.php";
 		$mail->Encoding = "8bit";
 		$mail->setFrom('edm@ares.com.tw', '資通電腦');
 

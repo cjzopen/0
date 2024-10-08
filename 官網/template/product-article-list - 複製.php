@@ -64,7 +64,7 @@ function article_list($product) {
   $i = 0;
   $lists = array();
   $article_html = '';
-  $db = new PDO("sqlite:/sites/global/epaper-article.db");
+  $db = new PDO("sqlite:/example/global/epaper-article.db");
   $rs = $db->query("SELECT * FROM article WHERE `date` <= date('now','-0 day') AND product LIKE '%{$product}%' ")->fetchAll();
   foreach ($rs as $row) {
     $lists[$i]['date']  = $row['date'];
@@ -110,7 +110,7 @@ function case_list($product) {
   $i = 0;
   $lists = array();
   $article_html = '';
-    $db = new PDO("sqlite:/sites/global/events.db");
+    $db = new PDO("sqlite:/example/global/events.db");
     // 這個db的product並沒有設定COLLATE
     $query = "SELECT news.id, news.date, news.title, news.content, news.redirect, news.news_name, news.img, news.description
       FROM news, best_practice

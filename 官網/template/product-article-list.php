@@ -72,7 +72,7 @@ function article_list($product) {
   $i = 0;
   $lists = array();
   $article_html = '';
-  $db = new PDO("sqlite:/sites/global/epaper-article.db");
+  $db = new PDO("sqlite:/example/global/epaper-article.db");
   $rs = $db->query("SELECT * FROM article WHERE `date` <= date('now','-0 day') AND product LIKE '%{$product}%' ")->fetchAll();
   foreach ($rs as $row) {
     $lists[$i]['date']  = $row['date'];
@@ -116,7 +116,7 @@ function article_list($product) {
 }
 function case_list($product) {
   $article_html = '';
-  $db = new PDO("sqlite:/sites/global/events.db");
+  $db = new PDO("sqlite:/example/global/events.db");
   $rs = $db->query("SELECT id, `date`, title, content, redirect, product, news_name, img, `description`, success_case FROM news WHERE product LIKE '%{$product}%' COLLATE NOCASE ORDER BY `date` DESC")->fetchAll();
 
   $_position=1;

@@ -130,4 +130,4 @@ if($contact>=1){
   echo '<script src="/public/js/form.js?v=2" defer fetchpriority="low"></script>';
 }
 ?>
-<?php //include_once "/sites/global/cookie-notification.php"; ?>
+<?php //include_once "/example/global/cookie-notification.php"; ?>

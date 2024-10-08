@@ -18,9 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (!preg_match($pattern, $email)) {
     $msg = 'blocked';
   }else{
-    include_once "/sites/global/recaptcha/ares_recaptcha_v2.php";
+    include_once "/example/global/recaptcha/ares_recaptcha_v2.php";
     // $response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : null;
-    // $privatekey = "6LcpDzsUAAAAAK56V74Q_MTPgYaJyAhwytvyRZPe";
+    // $privatekey = "*******";
     // $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$privatekey.'&response='.$response);
     // $responseData = json_decode($verifyResponse);
     // if($responseData->success){
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     try{
-      $db = new PDO("sqlite:/sites/global/epaper.db");
+      $db = new PDO("sqlite:/example/global/epaper.db");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }catch (PDOException $e) {
       $msg = 'newDbError';
@@ -78,14 +78,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     //收信者與寄信
-    include_once "/sites/global/PHPMailer6/src/Exception.php";
-    include_once "/sites/global/PHPMailer6/src/PHPMailer.php";
-    include_once "/sites/global/PHPMailer6/src/SMTP.php";
-    include_once "/sites/global/PHPMailer6/src/OAuth.php";
+    include_once "/example/global/PHPMailer6/src/Exception.php";
+    include_once "/example/global/PHPMailer6/src/PHPMailer.php";
+    include_once "/example/global/PHPMailer6/src/SMTP.php";
+    include_once "/example/global/PHPMailer6/src/OAuth.php";
     $mail = new PHPMailer();
     try{
       // $mail->SMTPDebug = 2;
-      include "/sites/global/PHPMailer6/ssl_setting.php";
+      include "/example/global/PHPMailer6/ssl_setting.php";
       $mail->setFrom('edm@ares.com.tw', '資通電腦');
       $mail->AddAddress($email);
       $mail->Subject = "資通電腦電子報訂閱確認";

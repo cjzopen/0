@@ -3,7 +3,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $keyword = htmlspecialchars(stripslashes($_POST['keyword']), ENT_QUOTES);
 
   try{
-    $db = new PDO("sqlite:/sites/global/servise.db");
+    $db = new PDO("sqlite:/example/global/servise.db");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }catch (PDOException $e) {
     $log = $e->getMessage();

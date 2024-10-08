@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $id = @$_POST['id'];
-  $ares = "sqlite:/sites/global/events.db";
+  $ares = "sqlite:/example/global/events.db";
   try{
     $db = new PDO($ares);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -112,5 +112,5 @@ window.addEventListener("load", function() {
 });
 </script>
 <?php
-// include_once "/sites/global/cookie-notification.php";
+// include_once "/example/global/cookie-notification.php";
 ?>

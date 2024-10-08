@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $ip = $_SERVER['REMOTE_ADDR'];
   $domainName = $_SERVER['HTTP_HOST'];
 
-  include_once ("/sites/global/recaptcha/src/autoload.php");
+  include_once ("/example/global/recaptcha/src/autoload.php");
   $recaptcha = new \ReCaptcha\ReCaptcha($secret);
   $resp = $recaptcha->setExpectedHostname($domainName)
                   ->setExpectedAction('homepage')
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
   try{
-    $db = new PDO("sqlite:/sites/global/consult.db");
+    $db = new PDO("sqlite:/example/global/consult.db");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }catch (PDOException $e) {
     $msg['ending'] = 'db';
@@ -76,10 +76,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   $rs = $db->exec($query);
 
-  include_once "/sites/global/PHPMailer6/src/Exception.php";
-  include_once "/sites/global/PHPMailer6/src/PHPMailer.php";
-  include_once "/sites/global/PHPMailer6/src/SMTP.php";
-  include_once "/sites/global/PHPMailer6/src/OAuth.php";
+  include_once "/example/global/PHPMailer6/src/Exception.php";
+  include_once "/example/global/PHPMailer6/src/PHPMailer.php";
+  include_once "/example/global/PHPMailer6/src/SMTP.php";
+  include_once "/example/global/PHPMailer6/src/OAuth.php";
   $mail = new PHPMailer();
   try {
     //Server settings

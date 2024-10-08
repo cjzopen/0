@@ -3,7 +3,7 @@ require($_SERVER['DOCUMENT_ROOT'].'/strac/variable.php');
 $pageName = "newsletter";
 $str = null;
 try {
-  $db = new PDO('sqlite:/sites/global/epaper-article.db');
+  $db = new PDO('sqlite:/example/global/epaper-article.db');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
   echo 'epaper connection failed: ' . $e->getMessage();

@@ -1,5 +1,5 @@
 <?php
-$db = new PDO("sqlite:/sites/global/servise.db");
+$db = new PDO("sqlite:/example/global/servise.db");
 putenv("TZ=ASIA/TAIPEI");
 
 $html = '';

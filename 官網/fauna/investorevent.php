@@ -1,6 +1,6 @@
 <?php
 require('ip.php');
-$ares = "sqlite:/sites/global/investor.db";
+$ares = "sqlite:/example/global/investor.db";
 ?>
 <!DOCTYPE html>
 <html lang="zh">

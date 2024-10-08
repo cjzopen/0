@@ -175,7 +175,7 @@ aimg(
               <ul class="disc">
 <?php
 try {
-  $db = new PDO("sqlite:/sites/hcp/topic/one-fixed-day-off-and-one-flexible-rest-day/news.db");
+  $db = new PDO("sqlite:/example/hcp/topic/one-fixed-day-off-and-one-flexible-rest-day/news.db");
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
   echo 'Database connection failed: ' . $e->getMessage();

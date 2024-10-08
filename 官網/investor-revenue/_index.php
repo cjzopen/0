@@ -1,6 +1,6 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'].'/strac/variable.php');
-$investor_db = "sqlite:/sites/global/investor.db";
+$investor_db = "sqlite:/example/global/investor.db";
 try {
   $db = new PDO($investor_db);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

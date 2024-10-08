@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   // google驗證
   $response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : null;
-  $privatekey = "6LcpDzsUAAAAAK56V74Q_MTPgYaJyAhwytvyRZPe";
+  $privatekey = "*******";
   $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$privatekey.'&response='.$response);
   $responseData = json_decode($verifyResponse);
   if($responseData->success){
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $ip = $_SERVER['REMOTE_ADDR'];
 
     try{
-      $db = new PDO("sqlite:/sites/global/consult.db");
+      $db = new PDO("sqlite:/example/global/consult.db");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }catch (PDOException $e) {
       $msg['db'] = 'newDbError';
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $data = openssl_decrypt($encryptedData, 'AES-256-CBC', $key, 0, substr($key, 0, 16));
       return $data;
     }
-    $encryptionKey = 'ourokroniiisperfect';
+    $encryptionKey = 'ouroiinorkisperfect';
     $companyEncrypt = encryptData($company, $encryptionKey);
     $nameEncrypt = encryptData($name, $encryptionKey);
     $phoneEncrypt = encryptData($phone, $encryptionKey);
@@ -87,11 +87,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = null;
     $rs = null;
 
-    include_once "/sites/global/phpMailer/PHPMailerAutoload.php";
-    include_once "/sites/global/PHPMailer6/add_address_check.php";
+    include_once "/example/global/phpMailer/PHPMailerAutoload.php";
+    include_once "/example/global/PHPMailer6/add_address_check.php";
 
     $mail = new PHPMailer();
-    include "/sites/global/PHPMailer6/ssl_setting.php";
+    include "/example/global/PHPMailer6/ssl_setting.php";
     $mail->isHTML(true);
     $mail->Encoding = "8bit";
     $mail->setFrom('Consult@ares.com.tw', $product);
@@ -118,7 +118,7 @@ body>table{margin:auto;}ul,ol{margin:0;}a, a:link a:hover{color:{$fontColor};tex
 MAILBODY;
     $mail->MsgHTML($body);
     $mail->send();
-    include_once "/sites/global/crm/product-label-and-update-json.php";
+    include_once "/example/global/crm/product-label-and-update-json.php";
     if ($epaper == 1){
       $privacy = '是';
       putenv("TZ=ASIA/TAIPEI");
@@ -136,7 +136,7 @@ MAILBODY;
       $md5 = md5($email);
       $uid = $md5.rand_string(16);
       try{
-        $db = new PDO("sqlite:/sites/global/epaper.db");
+        $db = new PDO("sqlite:/example/global/epaper.db");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       }catch (PDOException $e) {
         $msg['db'] = 'newDbError';
@@ -162,7 +162,7 @@ MAILBODY;
           $rs = $db->exec($query);
         }
         $mail = new PHPMailer();
-        include "/sites/global/PHPMailer6/ssl_setting.php";
+        include "/example/global/PHPMailer6/ssl_setting.php";
         $mail->isHTML(true);
         $mail->Encoding = "8bit";
         $mail->setFrom('edm@ares.com.tw', '資通電子報');

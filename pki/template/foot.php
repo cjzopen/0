@@ -134,4 +134,4 @@
 <script src="/lib/jquery.js" defer></script>
 <script src="/js/main.js" defer></script>
 <script>(function() { var css = document.createElement('link'); css.href = '//fonts.googleapis.com/css?family=Noto+Sans+TC:wght@400;700&subset=chinese-traditional&display=swap'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })();</script>
-<?php //include_once "/sites/global/cookie-notification.php"; ?>
+<?php //include_once "/example/global/cookie-notification.php"; ?>

@@ -1,7 +1,7 @@
 <?php
 
 try {
-  $db = new PDO('sqlite:/sites/global/events.db');
+  $db = new PDO('sqlite:/example/global/events.db');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
   echo 'Database connection failed: ' . $e->getMessage();

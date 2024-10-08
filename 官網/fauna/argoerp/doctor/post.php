@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$author = !empty($author) ? "'$author'" : "NULL";
 
     $msg =array();
-    $ares = "sqlite:/sites/argoerp/db/argoerp.sqlite";
+    $ares = "sqlite:/example/argoerp/db/argoerp.sqlite";
 
 
 		putenv("TZ=ASIA/TAIPEI");

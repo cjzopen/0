@@ -13,7 +13,7 @@ function aimg($src,$caption,$class){
 // menu 要用
 $path = $_SERVER['PHP_SELF'];
 
-$global_db = "sqlite:/sites/global/events.db";
+$global_db = "sqlite:/example/global/events.db";
 $product = 'ARES-PP';
 try {
   $db = new PDO($global_db);

@@ -9,10 +9,10 @@ header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 $name = htmlspecialchars(stripslashes($_POST['name']), ENT_QUOTES);
 $email = htmlspecialchars(stripslashes($_POST['email']), ENT_QUOTES);
 
-  include_once "/sites/global/PHPMailer6/src/Exception.php";
-  include_once "/sites/global/PHPMailer6/src/PHPMailer.php";
-  include_once "/sites/global/PHPMailer6/src/SMTP.php";
-  include_once "/sites/global/PHPMailer6/src/OAuth.php";
+  include_once "/example/global/PHPMailer6/src/Exception.php";
+  include_once "/example/global/PHPMailer6/src/PHPMailer.php";
+  include_once "/example/global/PHPMailer6/src/SMTP.php";
+  include_once "/example/global/PHPMailer6/src/OAuth.php";
 
   $mail = new PHPMailer();
   try {

@@ -1,7 +1,7 @@
 <?php
 // require('ip.php');
 
-$ares = "sqlite:/sites/global/epaper-article.db";
+$ares = "sqlite:/example/global/epaper-article.db";
 try{
   $db = new PDO($ares);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

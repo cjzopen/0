@@ -1,6 +1,6 @@
 <?php
 try{
-  $db = new PDO('sqlite:/sites/global/success-case.db');
+  $db = new PDO('sqlite:/example/global/success-case.db');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $msg['db'] = true;
 }catch (PDOException $e) {

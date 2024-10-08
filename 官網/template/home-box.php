@@ -1,6 +1,6 @@
 <?php
 try {
-  $db = new PDO('sqlite:/sites/global/events.db');
+  $db = new PDO('sqlite:/example/global/events.db');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
   echo 'Connection failed: ' . $e->getMessage();
@@ -97,7 +97,7 @@ $success_case=array(
 //********************************************************************
 
 try {
-  $db = new PDO('sqlite:/sites/global/epaper-article.db');
+  $db = new PDO('sqlite:/example/global/epaper-article.db');
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
   echo 'database connection failed: ' . $e->getMessage();

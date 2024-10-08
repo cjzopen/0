@@ -2,7 +2,7 @@
 $pageName='';
 $page=array();
 define('HOST_LINK', 'https://hcp.ares.com.tw/');
-define('GLOBAL_DB', 'sqlite:/sites/global/events.db');
+define('GLOBAL_DB', 'sqlite:/example/global/events.db');
 define('PHP_WEB_ROOT', $_SERVER['DOCUMENT_ROOT']);
 define('AGE', date("Y") - 1980);
 define('THE_PRODUCT', 'HCP');

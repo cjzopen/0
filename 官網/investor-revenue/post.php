@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SERVER['HTTP_HOST'] == 'www.ares.c
   }
   $date = strip_tags($_POST['data']);
   $year = substr($date,0,4);
-  $investor_db = "sqlite:/sites/global/investor.db";
+  $investor_db = "sqlite:/example/global/investor.db";
   try {
     $db = new PDO($investor_db);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -19,7 +19,7 @@ function aimg($src,$caption,$class){
 // menu 要用
 $path = $_SERVER['PHP_SELF'];
 
-$global_db = "sqlite:/sites/global/en/events.db";
+$global_db = "sqlite:/example/global/en/events.db";
 $product = 'ciMes';
 try {
   $db = new PDO($global_db);

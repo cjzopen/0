@@ -1,7 +1,7 @@
 <?php
 $host_link = 'https://www.ares.com.tw/';
-$global_db = "sqlite:/sites/global/events.db";
-$epaper_db = "sqlite:/sites/global/epaper.db";
+$global_db = "sqlite:/example/global/events.db";
+$epaper_db = "sqlite:/example/global/epaper.db";
 try {
     $db = new PDO($epaper_db);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

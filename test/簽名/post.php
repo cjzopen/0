@@ -23,10 +23,10 @@ header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept');
 
 
 
-  include_once "/sites/global/PHPMailer6/src/Exception.php";
-  include_once "/sites/global/PHPMailer6/src/PHPMailer.php";
-  include_once "/sites/global/PHPMailer6/src/SMTP.php";
-  include_once "/sites/global/PHPMailer6/src/OAuth.php";
+  include_once "/example/global/PHPMailer6/src/Exception.php";
+  include_once "/example/global/PHPMailer6/src/PHPMailer.php";
+  include_once "/example/global/PHPMailer6/src/SMTP.php";
+  include_once "/example/global/PHPMailer6/src/OAuth.php";
 
   $mail = new PHPMailer();
   try {

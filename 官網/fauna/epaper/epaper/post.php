@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // $summary = !empty($summary) ? "'$summary'" : "NULL";
 
     $msg =array();
-    $ares = "sqlite:/sites/global/epaper.db";
+    $ares = "sqlite:/example/global/epaper.db";
 
 
     putenv("TZ=ASIA/TAIPEI");

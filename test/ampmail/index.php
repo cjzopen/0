@@ -7,10 +7,10 @@ header('AMP-Access-Control-Allow-Source-Origin: edm@ares.com.tw');
 header('Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin');
 
 
-include_once "/sites/global/PHPMailer6/src/Exception.php";
-include_once "/sites/global/PHPMailer6/src/PHPMailer.php";
-include_once "/sites/global/PHPMailer6/src/SMTP.php";
-include_once "/sites/global/PHPMailer6/src/OAuth.php";
+include_once "/example/global/PHPMailer6/src/Exception.php";
+include_once "/example/global/PHPMailer6/src/PHPMailer.php";
+include_once "/example/global/PHPMailer6/src/SMTP.php";
+include_once "/example/global/PHPMailer6/src/OAuth.php";
 
 $mail = new PHPMailer();
   try {

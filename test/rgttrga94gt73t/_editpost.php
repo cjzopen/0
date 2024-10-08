@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_SERVER['HTTP_HOST'] == 'test.ares.
 
   $msg =array();
   try{
-    $db = new PDO('sqlite:/sites/global/success-case.db');
+    $db = new PDO('sqlite:/example/global/success-case.db');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }catch (PDOException $e) {
     $msg['send'] = 'db error';

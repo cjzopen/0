@@ -3,7 +3,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $table = @trim(htmlspecialchars(stripslashes($_POST['table']),  ENT_QUOTES));
   $column = @trim(htmlspecialchars(stripslashes($_POST['column']),  ENT_QUOTES));
   $tag = @$_POST['tag'];
-  $ares = "sqlite:/sites/global/events.db";
+  $ares = "sqlite:/example/global/events.db";
   try{
       $db = new PDO($ares);
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
 
   // $response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : null;
-  // $privatekey = "6LcpDzsUAAAAAK56V74Q_MTPgYaJyAhwytvyRZPe";
+  // $privatekey = "*******";
   // $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$privatekey.'&response='.$response);
   // $responseData = json_decode($verifyResponse);
   // if($responseData->success){
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 if($captchaCheck){
 
   try{
-    $db = new PDO("sqlite:/sites/global/consult.db");
+    $db = new PDO("sqlite:/example/global/consult.db");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }catch (PDOException $e) {
     $msg['ending'] = 'newDbError';
@@ -101,7 +101,7 @@ if($captchaCheck){
     $data = openssl_decrypt($encryptedData, 'AES-256-CBC', $key, 0, substr($key, 0, 16));
     return $data;
   }
-  $encryptionKey = 'ourokroniiisperfect';
+  $encryptionKey = 'ouroiinorkisperfect';
   $companyEncrypt = encryptData($company, $encryptionKey);
   $nameEncrypt = encryptData($name, $encryptionKey);
   $phoneEncrypt = encryptData($phone, $encryptionKey);
@@ -116,18 +116,18 @@ if($captchaCheck){
 
 
 
-  include_once "/sites/global/PHPMailer6/src/Exception.php";
-  include_once "/sites/global/PHPMailer6/src/PHPMailer.php";
-  include_once "/sites/global/PHPMailer6/src/SMTP.php";
-  include_once "/sites/global/PHPMailer6/src/OAuth.php";
+  include_once "/example/global/PHPMailer6/src/Exception.php";
+  include_once "/example/global/PHPMailer6/src/PHPMailer.php";
+  include_once "/example/global/PHPMailer6/src/SMTP.php";
+  include_once "/example/global/PHPMailer6/src/OAuth.php";
 
-  include_once "/sites/global/PHPMailer6/add_address_check.php";
+  include_once "/example/global/PHPMailer6/add_address_check.php";
 
   $mail = new PHPMailer();
   try {
     //Server settings
     // $mail->SMTPDebug = 2; // Enable verbose debug output
-    include "/sites/global/PHPMailer6/ssl_setting.php";
+    include "/example/global/PHPMailer6/ssl_setting.php";
 
     //Recipients
     $mail->setFrom('Consult@ares.com.tw', $product);
@@ -161,7 +161,7 @@ MAILBODY;
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    include_once "/sites/global/crm/product-label-and-update-json.php";
+    include_once "/example/global/crm/product-label-and-update-json.php";
     // echo 'Message has been sent';
     if ($epaper == 1){
       $privacy = '是';
@@ -180,7 +180,7 @@ MAILBODY;
       $md5 = md5($email);
       $uid = $md5.rand_string(16);
       try{
-        $db = new PDO("sqlite:/sites/global/epaper.db");
+        $db = new PDO("sqlite:/example/global/epaper.db");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       }catch (PDOException $e) {
         $msg['db'] = 'newDbError';
@@ -207,7 +207,7 @@ MAILBODY;
         }
         $mail = new PHPMailer();
         try{
-          include "/sites/global/PHPMailer6/ssl_setting.php";
+          include "/example/global/PHPMailer6/ssl_setting.php";
           $mail->setFrom('edm@ares.com.tw', '資通電腦電子報');
           $mail->AddAddress($email);
           $mail->Subject = "資通電腦電子報訂閱確認";

@@ -3,7 +3,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = @$_POST['id'];
 
     $msg =array();
-    $ares = "sqlite:/sites/global/events.db";
+    $ares = "sqlite:/example/global/events.db";
 
 
         putenv("TZ=ASIA/TAIPEI");

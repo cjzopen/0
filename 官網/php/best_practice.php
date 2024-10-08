@@ -1,5 +1,5 @@
 <?php
-$global_db = "sqlite:/sites/global/events.db";
+$global_db = "sqlite:/example/global/events.db";
 try {
     $db = new PDO($global_db);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

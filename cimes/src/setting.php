@@ -33,7 +33,7 @@ function webp($img){
 // menu 要用
 $path = $_SERVER['PHP_SELF'];
 
-$global_db = "sqlite:/sites/global/events.db";
+$global_db = "sqlite:/example/global/events.db";
 $product = 'ciMes';
 try {
   $db = new PDO($global_db);
@@ -47,7 +47,7 @@ $news = $rs->fetch(PDO::FETCH_ASSOC);
 $news_last_year = substr($news['date'], 0, 4);
 // 知識分享最新年份
 try {
-  $epaper_db = new PDO("sqlite:/sites/global/epaper-article.db");
+  $epaper_db = new PDO("sqlite:/example/global/epaper-article.db");
   $epaper_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
   echo 'Database connection failed: ' . $e->getMessage();

@@ -2,17 +2,17 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-include_once "/sites/global/PHPMailer6/src/Exception.php";
-include_once "/sites/global/PHPMailer6/src/PHPMailer.php";
-include_once "/sites/global/PHPMailer6/src/SMTP.php";
-include_once "/sites/global/PHPMailer6/src/OAuth.php";
+include_once "/example/global/PHPMailer6/src/Exception.php";
+include_once "/example/global/PHPMailer6/src/PHPMailer.php";
+include_once "/example/global/PHPMailer6/src/SMTP.php";
+include_once "/example/global/PHPMailer6/src/OAuth.php";
 
 $email='cj1895@ares.com.tw';
 $name='cj';
 
 
 $mail = new PHPMailer();
-include "/sites/global/PHPMailer6/ssl_setting.php";
+include "/example/global/PHPMailer6/ssl_setting.php";
 $mail->setFrom('edm@ares.com.tw', '電子報');
 $mail->AddAddress($email, $name);
 $mail->Subject = "第1";
@@ -42,7 +42,7 @@ MAILBODY;
     $mail->Subject = $name.'第2';
 
     try {
-      $db = new PDO('sqlite:/sites/global/epaper-article.db');
+      $db = new PDO('sqlite:/example/global/epaper-article.db');
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e) {
       echo 'database connection failed: ' . $e->getMessage();
@@ -51,7 +51,7 @@ MAILBODY;
     $rs = $db->query("SELECT `date` FROM article WHERE `date` <= date('now') ORDER BY `date` DESC LIMIT 1");
     $last_date = $rs->fetchColumn();
 
-    $file_path = '/sites/edm/dm/test/'.$last_date.'.html';
+    $file_path = '/example/edm/dm/test/'.$last_date.'.html';
     $html_content = file_get_contents($file_path);
 
     $mail->MsgHTML($html_content);

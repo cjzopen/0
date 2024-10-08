@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
   try{
-    $db = new PDO("sqlite:/sites/global/consult_secretary.db");
+    $db = new PDO("sqlite:/example/global/consult_secretary.db");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }catch (PDOException $e) {
     $msg['ending'] = 'newDbError';
@@ -59,10 +59,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-  include_once "/sites/global/PHPMailer6/src/Exception.php";
-  include_once "/sites/global/PHPMailer6/src/PHPMailer.php";
-  include_once "/sites/global/PHPMailer6/src/SMTP.php";
-  include_once "/sites/global/PHPMailer6/src/OAuth.php";
+  include_once "/example/global/PHPMailer6/src/Exception.php";
+  include_once "/example/global/PHPMailer6/src/PHPMailer.php";
+  include_once "/example/global/PHPMailer6/src/SMTP.php";
+  include_once "/example/global/PHPMailer6/src/OAuth.php";
 
   if (empty($product)) {
     $product='unknow';
@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   try {
     //Server settings
     // $mail->SMTPDebug = 2; // Enable verbose debug output
-    include "/sites/global/PHPMailer6/ssl_setting.php";
+    include "/example/global/PHPMailer6/ssl_setting.php";
 
     //Recipients
     // if($source=='潛客來電（新竹）' || $source=='潛客來信（新竹）'){
@@ -193,7 +193,7 @@ MAILBODY;
     // echo 'Message has been sent';
 
     // update json file data.json
-    include_once "/sites/global/crm/product-label-and-update-json.php";
+    include_once "/example/global/crm/product-label-and-update-json.php";
 
   } catch (Exception $e) {
     echo 'Message could not be sent. Mailer Error: '. $mail->ErrorInfo;

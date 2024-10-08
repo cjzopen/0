@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   $note = !empty($note) ? $note : "無";
   $msg =array();
-  $ares = "sqlite:/sites/global/investor.db";
+  $ares = "sqlite:/example/global/investor.db";
   putenv("TZ=ASIA/TAIPEI");
   $submitDate = date("Y-m-d H:i:s", time());
   try{

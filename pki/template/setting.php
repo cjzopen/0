@@ -2,7 +2,7 @@
 $pageName='';
 $page=array();
 define('HOST_LINK', 'https://pki.ares.com.tw');
-define('GLOBAL_DB', 'sqlite:/sites/global/events.db');
+define('GLOBAL_DB', 'sqlite:/example/global/events.db');
 define('PHP_WEB_ROOT', $_SERVER['DOCUMENT_ROOT']);
 define('AGE', date("Y") - 1980);
 // $nowUrl = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";

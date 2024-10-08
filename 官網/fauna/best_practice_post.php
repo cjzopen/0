@@ -6,8 +6,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $product = !empty($product) ? "'$product'" : "NULL";
 
   $msg =array();
-  // $ares = "sqlite:/sites/golbals/events.db";
-  $ares = "sqlite:/sites/global/events.db";
+  // $ares = "sqlite:/example/golbals/events.db";
+  $ares = "sqlite:/example/global/events.db";
 
 
     putenv("TZ=ASIA/TAIPEI");

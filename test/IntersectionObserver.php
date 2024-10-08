@@ -1,5 +1,5 @@
 <?php
-$_db = "sqlite:/sites/global/epaper-article.db";
+$_db = "sqlite:/example/global/epaper-article.db";
 try {
   $db = new PDO($_db);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

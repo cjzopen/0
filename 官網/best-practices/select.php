@@ -3,7 +3,7 @@ $select_type = htmlspecialchars(stripslashes($_POST['select_type']),  ENT_QUOTES
 $select_year = htmlspecialchars(stripslashes($_POST['select_year']),  ENT_QUOTES);
 
 
-$global_db = "sqlite:/sites/global/events.db";
+$global_db = "sqlite:/example/global/events.db";
 try {
   $db = new PDO($global_db);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
